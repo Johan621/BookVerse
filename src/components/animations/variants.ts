@@ -12,7 +12,7 @@ export const fadeIn: Variants = {
   }
 };
 
-export const springConfig = { type: "spring", stiffness: 300, damping: 30 };
+export const springConfig = { type: "spring" as const, stiffness: 300, damping: 30 };
 
 export const slideUp: Variants = {
   hidden: { opacity: 0, y: 20 },
