@@ -26,10 +26,10 @@ export const NavMobile = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Close menu on route change
+  // Close menu on route change, only if open
   React.useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+    if (isOpen) setIsOpen(false);
+  }, [pathname, isOpen]);
 
   return (
     <div className="md:hidden flex items-center">

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-interface GradientMeshProps extends React.HTMLAttributes<HTMLDivElement> {}
+type GradientMeshProps = React.HTMLAttributes<HTMLDivElement>;
 
 export const GradientMesh = React.forwardRef<HTMLDivElement, GradientMeshProps>(
   ({ className, ...props }, ref) => {

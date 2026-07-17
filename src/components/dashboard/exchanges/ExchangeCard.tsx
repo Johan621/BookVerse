@@ -16,7 +16,7 @@ interface ExchangeCardProps {
   date: string;
 }
 
-const statusConfig: Record<ExchangeStatus, { color: string; icon: any; label: string }> = {
+const statusConfig: Record<ExchangeStatus, { color: string; icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; label: string }> = {
   PENDING: { color: "text-amber-500 bg-amber-500/10 border-amber-500/20", icon: Clock, label: "Pending" },
   ACCEPTED: { color: "text-blue-400 bg-blue-500/10 border-blue-500/20", icon: CheckCircle2, label: "Accepted" },
   COMPLETED: { color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20", icon: CheckCircle2, label: "Completed" },

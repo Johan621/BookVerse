@@ -5,27 +5,28 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export const FloatingParticles = ({ particleCount = 30 }: { particleCount?: number }) => {
-  const [particles, setParticles] = useState<{ id: number; x: number; y: number; size: number }[]>([]);
+  const [particles, setParticles] = useState<{ id: number; x: number; y: number; size: number; offsetX: number; duration: number }[]>([]);
 
+  // Generate particles on mount or when particleCount changes
   useEffect(() => {
-    // Only run on client
-    const generateParticles = () => {
-      const newParticles = Array.from({ length: particleCount }).map((_, i) => ({
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size: Math.random() * 4 + 1,
-      }));
-      setParticles(newParticles);
-    };
-    generateParticles();
+    const newParticles = Array.from({ length: particleCount }).map((_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 1,
+      offsetX: Math.random() * 50 - 25,
+      duration: Math.random() * 10 + 10,
+    }));
+    setParticles(newParticles);
   }, [particleCount]);
 
   if (particles.length === 0) return null;
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {particles.map((particle) => (
+      {particles.map((particle) => {
+        const particleMotion = { offsetX: particle.offsetX, duration: particle.duration };
+      return (
         <motion.div
           key={particle.id}
           className="absolute rounded-full bg-primary/30 dark:bg-primary/20"
@@ -37,16 +38,17 @@ export const FloatingParticles = ({ particleCount = 30 }: { particleCount?: numb
           }}
           animate={{
             y: [0, -100, 0],
-            x: [0, Math.random() * 50 - 25, 0],
+            x: [0, particleMotion.offsetX, 0],
             opacity: [0.2, 0.8, 0.2],
           }}
           transition={{
-            duration: Math.random() * 10 + 10,
+            duration: particleMotion.duration,
             repeat: Infinity,
             ease: "linear",
           }}
         />
-      ))}
+      );
+      })}
     </div>
   );
 };

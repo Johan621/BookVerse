@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import * as React from "react"; import { useState } from "react";
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Container } from "@/components/common/Container";
