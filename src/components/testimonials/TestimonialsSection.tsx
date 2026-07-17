@@ -19,7 +19,7 @@ export const TestimonialsSection = () => {
               Loved by Students
             </div>
             <SectionHeading className="mb-6">
-              Don't Just Take Our Word For It
+              Don&apos;t Just Take Our Word For It
             </SectionHeading>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
               Thousands of students are already using BookVerse AI to save money, share knowledge, and build stronger campus communities.

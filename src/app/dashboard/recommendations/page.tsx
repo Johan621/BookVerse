@@ -51,7 +51,7 @@ export default function AIRecommendationsPage() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {MOCK_MAJOR.map((book) => (
-            <BookCard key={book.id} {...book} />
+            <BookCard key={book.id} {...(book as any)} />
           ))}
         </div>
       </FadeIn>
@@ -74,7 +74,7 @@ export default function AIRecommendationsPage() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {MOCK_TRENDING.map((book) => (
-            <BookCard key={book.id} {...book} />
+            <BookCard key={book.id} {...(book as any)} />
           ))}
         </div>
       </FadeIn>

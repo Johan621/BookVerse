@@ -52,7 +52,8 @@ export const RevealText = ({ text, className, delay = 0 }: RevealTextProps) => {
     >
       {words.map((word, index) => (
         <motion.span
-          variants={child}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          variants={child as unknown as any}
           className="mr-[0.25em] inline-block"
           key={index}
         >

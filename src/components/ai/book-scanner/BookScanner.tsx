@@ -81,7 +81,7 @@ export const BookScanner = () => {
             Scan your book cover
           </h2>
           <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-            Our AI will automatically extract the title, author, ISBN, and categorization details so you don't have to type them.
+            Our AI will automatically extract the title, author, ISBN, and categorization details so you don&apos;t have to type them.
           </p>
           
           <SlideUp delay={0.1}>

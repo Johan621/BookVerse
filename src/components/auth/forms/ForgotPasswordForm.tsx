@@ -48,7 +48,7 @@ export const ForgotPasswordForm = () => {
         </div>
         <h3 className="text-xl font-bold">Check your email</h3>
         <p className="text-muted-foreground">
-          We've sent a password reset link to your email address. Please check your inbox and spam folder.
+          We&apos;ve sent a password reset link to your email address. Please check your inbox and spam folder.
         </p>
         <Button variant="outline" className="w-full" onClick={() => setIsSubmitted(false)}>
           Try another email

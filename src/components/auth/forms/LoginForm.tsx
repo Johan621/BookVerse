@@ -103,7 +103,7 @@ export const LoginForm = () => {
       </Button>
 
       <p className="text-center text-sm text-muted-foreground mt-6">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href="/register" className="font-semibold text-foreground hover:text-primary transition-colors">
           Create one now
         </Link>

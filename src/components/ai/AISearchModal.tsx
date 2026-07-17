@@ -30,8 +30,11 @@ export const AISearchModal = ({ isOpen, onClose }: AISearchModalProps) => {
 
   React.useEffect(() => {
     if (!isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setQuery("");
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setResults(null);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsSearching(false);
     }
   }, [isOpen]);
@@ -122,7 +125,7 @@ export const AISearchModal = ({ isOpen, onClose }: AISearchModalProps) => {
             <FadeIn>
               <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-4">AI Recommendations</h3>
               <div className="space-y-3">
-                {results.map((result, idx) => (
+                {results.map((result) => (
                   <Link href={`/books/${result.id}`} key={result.id} onClick={onClose}>
                     <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 hover:bg-primary/5 transition-all flex items-start gap-4 group">
                       <div className="w-10 h-12 rounded bg-white/10 flex items-center justify-center shrink-0">

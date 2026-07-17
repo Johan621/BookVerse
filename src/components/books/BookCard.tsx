@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Bookmark, Heart, Star, CheckCircle2, Eye } from "lucide-react";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-import { Floating } from "@/components/animations/Floating";
+// import { Floating } from "@/components/animations/Floating";
 
 export interface BookProps {
   id: string;

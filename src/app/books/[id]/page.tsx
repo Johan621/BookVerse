@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,7 +61,10 @@ type Review = {
 export default function BookDetailsPage({ params }: { params: { id: string } }) {
   const router = useRouter();
   const { id } = params;
-  const book = mockBooks[id];
+  const book = mockBooks[id as keyof typeof mockBooks];
+
+  const [isWishlisted, setWishlisted] = React.useState(false);
+  const [isBookmarked, setBookmarked] = React.useState(false);
 
   if (!book) {
     return (
@@ -71,10 +76,6 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
       </div>
     );
   }
-
-  const [isWishlisted, setWishlisted] = React.useState(false);
-  const [isBookmarked, setBookmarked] = React.useState(false);
-
   return (
     <motion.div
       className="container mx-auto p-6"
@@ -94,7 +95,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
             className="rounded-xl object-cover w-full h-auto shadow-lg"
           />
           <div className="grid grid-cols-3 gap-2">
-            {book.images.map((src, idx) => (
+            {book.images.map((src: string, idx: number) => (
               <Image
                 key={idx}
                 src={src}
@@ -170,7 +171,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
       <section className="mt-12">
         <h2 className="text-2xl font-semibold mb-4 text-foreground">Reviews</h2>
         <div className="space-y-4">
-          {book.reviews.map((rev, i) => (
+          {book.reviews.map((rev: Review, i: number) => (
             <div key={i} className="p-4 bg-background/30 rounded-lg glass-heavy">
               <p className="font-medium text-foreground">{rev.user}</p>
               <p className="text-sm text-muted-foreground">Rating: {rev.rating}/5</p>
@@ -184,7 +185,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
       <section className="mt-12">
         <h2 className="text-2xl font-semibold mb-4 text-foreground">Related Books</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {book.related.map((rel) => (
+          {book.related.map((rel: any) => (
             <Link key={rel.id} href={`/books/${rel.id}`}>
               <BookCard {...rel} />
             </Link>

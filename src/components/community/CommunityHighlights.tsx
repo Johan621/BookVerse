@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { FadeIn } from "@/components/animations/FadeIn";
+// import { FadeIn } from "@/components/animations/FadeIn";
 import { SlideUp } from "@/components/animations/SlideUp";
 import { Quote, Building, TrendingUp, BookMarked } from "lucide-react";
 
@@ -16,7 +16,7 @@ export const CommunityHighlights = () => {
         <Card variant="glass" className="h-full flex flex-col justify-center p-8 border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors">
           <Quote className="h-10 w-10 text-primary mb-4 opacity-50" />
           <h3 className="text-xl font-bold text-foreground leading-relaxed mb-6">
-            "I managed to get all my 3rd-semester CS textbooks for half the price. Meeting someone from the senior batch was incredibly helpful for exam tips too!"
+            &quot;I managed to get all my 3rd-semester CS textbooks for half the price. Meeting someone from the senior batch was incredibly helpful for exam tips too!&quot;
           </h3>
           <div className="flex items-center gap-4 mt-auto">
             <div className="h-12 w-12 rounded-full bg-gradient-to-tr from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold shadow-inner">

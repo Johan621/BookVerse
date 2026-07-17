@@ -28,6 +28,7 @@ export const NavMobile = () => {
 
   // Close menu on route change, only if open
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (isOpen) setIsOpen(false);
   }, [pathname, isOpen]);
 

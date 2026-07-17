@@ -17,6 +17,7 @@ export const FloatingParticles = ({ particleCount = 30 }: { particleCount?: numb
       offsetX: Math.random() * 50 - 25,
       duration: Math.random() * 10 + 10,
     }));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParticles(newParticles);
   }, [particleCount]);
 

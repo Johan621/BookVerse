@@ -45,7 +45,7 @@ export const TestimonialCard = ({ testimonial }: { testimonial: TestimonialProps
 
       {/* Review Text */}
       <p className="text-sm text-foreground/90 leading-relaxed mb-6 italic flex-1">
-        "{testimonial.review}"
+        &quot;{testimonial.review}&quot;
       </p>
 
       {/* Bottom Section: Stats */}

@@ -39,7 +39,7 @@ export const CategoryCard = ({ title, icon: Icon, count, colorClass }: CategoryC
   // Sync displayCount with count when count changes or when not hovered
   // Removed effect that set state synchronously to avoid React hooks lint error.
   // Display count directly when not hovered.
-  const displayedCount = isHovered ? displayCount : count;
+  // const displayedCount = isHovered ? displayCount : count;
 
   return (
     <motion.div

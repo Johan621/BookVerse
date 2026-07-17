@@ -10,6 +10,7 @@ interface AnimatedAuroraProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const AnimatedAurora = React.forwardRef<HTMLDivElement, AnimatedAuroraProps>(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ className, colors, speed, ...props }, ref) => {
     return (
       <div

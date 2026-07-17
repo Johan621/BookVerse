@@ -1,123 +1,103 @@
 "use client";
 
-import * as React from "react";
-import { FadeIn } from "@/components/animations/FadeIn";
-import { Search, MoreVertical, Ban, Trash2, Mail } from "lucide-react";
-import { Input } from "@/components/ui/Input";
-import { toast } from "sonner";
+import { DataTable } from "@/components/admin/ui/DataTable";
+import { Badge } from "@/components/ui/Badge";
+import { MoreHorizontal, Shield, Ban, Mail } from "lucide-react";
 
-const MOCK_USERS = [
-  { id: "u1", name: "Alex Johnson", email: "alex@state.edu", college: "State University", status: "ACTIVE", joined: "Oct 1, 2024" },
-  { id: "u2", name: "Priya Kumar", email: "priya@tech.edu", college: "Tech Institute", status: "ACTIVE", joined: "Sep 28, 2024" },
-  { id: "u3", name: "Rahul Sharma", email: "rahul@state.edu", college: "State University", status: "SUSPENDED", joined: "Sep 15, 2024" },
-  { id: "u4", name: "Sarah Smith", email: "sarah@city.edu", college: "City College", status: "ACTIVE", joined: "Oct 12, 2024" },
+// Mock Data
+const users = [
+  { id: "USR-001", name: "Alice Walker", email: "alice@example.com", role: "User", status: "Active", joined: "Oct 12, 2023" },
+  { id: "USR-002", name: "John Doe", email: "john@example.com", role: "Moderator", status: "Active", joined: "Nov 05, 2023" },
+  { id: "USR-003", name: "Spammer99", email: "spam@example.com", role: "User", status: "Blocked", joined: "Jan 14, 2024" },
+  { id: "USR-004", name: "Jane Smith", email: "jane@example.com", role: "Admin", status: "Active", joined: "Aug 22, 2023" },
+  { id: "USR-005", name: "Bob Builder", email: "bob@example.com", role: "User", status: "Warning", joined: "Dec 01, 2023" },
 ];
 
-export default function AdminUsersPage() {
-  const [search, setSearch] = React.useState("");
-  const [activeMenu, setActiveMenu] = React.useState<string | null>(null);
-
-  const filteredUsers = MOCK_USERS.filter(u => 
-    u.name.toLowerCase().includes(search.toLowerCase()) || 
-    u.email.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const handleAction = (action: string, user: string) => {
-    toast.success(`${action} applied to ${user} (Mock)`);
-    setActiveMenu(null);
-  };
+export default function ManageUsersPage() {
+  
+  const columns = [
+    {
+      header: "User",
+      cell: (user: any) => (
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-white/10 flex items-center justify-center font-bold text-purple-300">
+            {user.name.charAt(0)}
+          </div>
+          <div>
+            <p className="font-medium text-foreground">{user.name}</p>
+            <p className="text-xs text-muted-foreground">{user.id}</p>
+          </div>
+        </div>
+      )
+    },
+    {
+      header: "Email",
+      accessorKey: "email"
+    },
+    {
+      header: "Role",
+      cell: (user: any) => (
+        <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${
+          user.role === 'Admin' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
+          user.role === 'Moderator' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
+          'bg-white/5 text-muted-foreground border-white/10'
+        }`}>
+          {user.role}
+        </span>
+      )
+    },
+    {
+      header: "Status",
+      cell: (user: any) => (
+        <span className={`px-2.5 py-1 rounded-full text-xs font-medium flex items-center gap-1.5 w-fit ${
+          user.status === 'Active' ? 'text-green-400' :
+          user.status === 'Blocked' ? 'text-red-400' :
+          'text-yellow-400'
+        }`}>
+          <div className={`w-1.5 h-1.5 rounded-full ${
+            user.status === 'Active' ? 'bg-green-400' :
+            user.status === 'Blocked' ? 'bg-red-400' :
+            'bg-yellow-400'
+          }`} />
+          {user.status}
+        </span>
+      )
+    },
+    {
+      header: "Joined",
+      accessorKey: "joined"
+    },
+    {
+      header: "Actions",
+      cell: (user: any) => (
+        <div className="flex items-center gap-2">
+          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-foreground transition-colors" title="Email User">
+            <Mail className="w-4 h-4" />
+          </button>
+          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-red-400 transition-colors" title="Block User">
+            <Ban className="w-4 h-4" />
+          </button>
+          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-purple-400 transition-colors" title="More Options">
+            <MoreHorizontal className="w-4 h-4" />
+          </button>
+        </div>
+      )
+    }
+  ];
 
   return (
-    <div className="space-y-6 pb-12">
-      
-      <FadeIn className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Manage Users</h1>
-          <p className="text-muted-foreground text-sm mt-1">View and moderate platform members.</p>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">Manage Users</h1>
+          <p className="text-muted-foreground mt-1">View and manage platform users, roles, and account statuses.</p>
         </div>
-        <div className="relative w-full sm:w-64">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-          <Input 
-            placeholder="Search users..." 
-            className="pl-9 bg-white/5 border-white/10 focus-visible:ring-purple-500/50"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-      </FadeIn>
+        <button className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-medium transition-colors shadow-[0_0_15px_rgba(147,51,234,0.3)]">
+          Export Users
+        </button>
+      </div>
 
-      <FadeIn delay={0.1} className="rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm text-left">
-            <thead className="bg-white/5 text-muted-foreground text-xs uppercase font-semibold">
-              <tr>
-                <th className="px-6 py-4">User</th>
-                <th className="px-6 py-4">College</th>
-                <th className="px-6 py-4">Status</th>
-                <th className="px-6 py-4">Joined</th>
-                <th className="px-6 py-4 text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-white/10">
-              {filteredUsers.length === 0 ? (
-                <tr>
-                  <td colSpan={5} className="px-6 py-8 text-center text-muted-foreground">
-                    No users found matching "{search}"
-                  </td>
-                </tr>
-              ) : (
-                filteredUsers.map((user) => (
-                  <tr key={user.id} className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xs shadow-inner">
-                          {user.name.split(' ').map(n => n[0]).join('')}
-                        </div>
-                        <div>
-                          <p className="font-bold text-foreground">{user.name}</p>
-                          <p className="text-xs text-muted-foreground">{user.email}</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-muted-foreground">{user.college}</td>
-                    <td className="px-6 py-4">
-                      <span className={`inline-flex px-2 py-1 rounded text-[10px] font-bold tracking-wider ${
-                        user.status === "ACTIVE" ? "bg-emerald-500/10 text-emerald-400" : "bg-red-500/10 text-red-400"
-                      }`}>
-                        {user.status}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-muted-foreground">{user.joined}</td>
-                    <td className="px-6 py-4 text-right relative">
-                      <button 
-                        onClick={() => setActiveMenu(activeMenu === user.id ? null : user.id)}
-                        className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <MoreVertical className="w-4 h-4" />
-                      </button>
-
-                      {/* Dropdown Menu */}
-                      {activeMenu === user.id && (
-                        <div className="absolute right-6 top-10 w-40 bg-background border border-white/10 rounded-xl shadow-xl z-20 py-1 overflow-hidden animate-in fade-in zoom-in-95">
-                          <button onClick={() => handleAction("Email Sent", user.name)} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-foreground hover:bg-white/5 transition-colors">
-                            <Mail className="w-4 h-4" /> Email User
-                          </button>
-                          <button onClick={() => handleAction(user.status === "ACTIVE" ? "Suspension" : "Un-suspension", user.name)} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-amber-400 hover:bg-amber-500/10 transition-colors">
-                            <Ban className="w-4 h-4" /> {user.status === "ACTIVE" ? "Suspend" : "Activate"}
-                          </button>
-                          <button onClick={() => handleAction("Deletion", user.name)} className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-400 hover:bg-red-500/10 transition-colors">
-                            <Trash2 className="w-4 h-4" /> Delete
-                          </button>
-                        </div>
-                      )}
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
-      </FadeIn>
+      <DataTable data={users} columns={columns as any} searchPlaceholder="Search users by name, email, or ID..." />
     </div>
   );
 }

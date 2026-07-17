@@ -10,7 +10,8 @@ import {
   ShieldAlert, 
   Flag,
   Settings,
-  LogOut
+  LogOut,
+  BarChart3
 } from "lucide-react";
 
 const navItems = [
@@ -19,6 +20,7 @@ const navItems = [
   { icon: BookOpen, label: "Manage Books", href: "/admin/books" },
   { icon: ShieldAlert, label: "Moderation Queue", href: "/admin/moderation" },
   { icon: Flag, label: "Reports", href: "/admin/reports" },
+  { icon: BarChart3, label: "Analytics", href: "/admin/analytics" },
 ];
 
 export const AdminSidebar = () => {

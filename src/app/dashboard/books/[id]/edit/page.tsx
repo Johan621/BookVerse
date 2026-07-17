@@ -15,7 +15,7 @@ export default function EditBookPage({ params }: { params: { id: string } }) {
     author: "Thomas H. Cormen",
     isbn: "978-0262033848",
     description: "Used for 1 semester. Very few highlights. The binding is completely intact and it includes the online access code which hasn't been scratched.",
-    condition: "GOOD",
+    condition: "GOOD" as const,
     category: "cs",
     price: "",
   };

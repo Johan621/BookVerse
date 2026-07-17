@@ -83,7 +83,7 @@ export const PriceResults = ({ originalPrice }: PriceResultsProps) => {
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <span className="w-1.5 h-1.5 rounded-full bg-yellow-500 mt-1.5 shrink-0" />
-                <p>Depreciation of <strong className="text-foreground">35%</strong> applied for "Good" condition and 3rd Edition.</p>
+                <p>Depreciation of <strong className="text-foreground">35%</strong> applied for &quot;Good&quot; condition and 3rd Edition.</p>
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />

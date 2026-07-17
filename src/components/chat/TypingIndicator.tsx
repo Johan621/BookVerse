@@ -8,7 +8,7 @@ export const TypingIndicator: React.FC = () => {
   const dotVariants = {
     bounce: {
       y: [0, -5, 0],
-      transition: { repeat: Infinity, duration: 0.6, ease: "easeInOut" },
+      transition: { repeat: Infinity, duration: 0.6, ease: "easeInOut" as const },
     },
   }
   return (
