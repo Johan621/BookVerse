@@ -1,18 +1,26 @@
 "use client";
 
 import * as React from "react";
-import { motion, HTMLMotionProps } from "framer-motion";
-import { scaleUp } from "./variants";
+import { motion, HTMLMotionProps, useReducedMotion } from "framer-motion";
+import { scaleUp, fadeIn } from "./variants";
 
-export const ScaleIn = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
-  ({ children, ...props }, ref) => {
+interface ScaleInProps extends HTMLMotionProps<"div"> {
+  delay?: number;
+}
+
+export const ScaleIn = React.forwardRef<HTMLDivElement, ScaleInProps>(
+  ({ children, delay = 0, style, ...props }, ref) => {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
       <motion.div
         ref={ref}
-        variants={scaleUp}
+        variants={shouldReduceMotion ? fadeIn : scaleUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-10%" }}
+        exit="exit"
+        style={{ ...style, transitionDelay: `${delay}s` }}
         {...props}
       >
         {children}

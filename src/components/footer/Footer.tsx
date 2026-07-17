@@ -98,13 +98,13 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-foreground text-sm tracking-wider uppercase">Connect</h4>
             <div className="flex items-center gap-4 mb-4">
-              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
+              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-colors border-white/10">
                 <Globe className="w-4 h-4" />
               </Link>
-              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
+              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-colors border-white/10">
                 <MessageSquare className="w-4 h-4" />
               </Link>
-              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
+              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-colors border-white/10">
                 <Share2 className="w-4 h-4" />
               </Link>
             </div>

@@ -21,7 +21,7 @@ export const SmartSearchBar = () => {
       </motion.div>
 
       {/* Glass Search Bar */}
-      <div className="relative flex h-16 w-full items-center overflow-hidden rounded-full glass-heavy border-white/20 shadow-2xl transition-all hover:border-primary/50 focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/20">
+      <div className="relative flex h-16 w-full items-center overflow-hidden rounded-full glass-heavy border-white/20 shadow-2xl transition-colors hover:border-primary/50 focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/20">
         <div className="flex h-full items-center pl-6 pr-3 text-muted-foreground">
           <Search className="h-6 w-6" />
         </div>

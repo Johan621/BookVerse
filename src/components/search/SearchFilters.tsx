@@ -31,7 +31,7 @@ export const SearchFilters = () => {
             <button
               onClick={() => setActiveFilter(activeFilter === filter.label ? null : filter.label)}
               className={cn(
-                "flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-all",
+                "flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium transition-colors",
                 "glass border-white/10 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary",
                 activeFilter === filter.label ? "bg-white/10 border-primary/50 text-primary" : "text-foreground"
               )}

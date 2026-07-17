@@ -16,7 +16,7 @@ export const FaqAccordion = ({ question, answer, isOpen, onClick }: FaqItemProps
   return (
     <div className="w-full mb-4">
       <button
-        className={`w-full flex items-center justify-between p-6 rounded-2xl border backdrop-blur-xl transition-all duration-300 ${
+        className={`w-full flex items-center justify-between p-6 rounded-2xl border backdrop-blur-xl transition-colors duration-300 ${
           isOpen 
             ? "bg-white/10 border-primary/30 shadow-[0_4px_20px_rgba(var(--primary-rgb),0.1)]" 
             : "bg-white/5 border-white/10 hover:bg-white/10"

@@ -12,12 +12,14 @@ export const fadeIn: Variants = {
   }
 };
 
+export const springConfig = { type: "spring", stiffness: 300, damping: 30 };
+
 export const slideUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } 
+    transition: springConfig 
   },
   exit: {
     opacity: 0,
@@ -31,7 +33,7 @@ export const scaleUp: Variants = {
   visible: { 
     opacity: 1, 
     scale: 1,
-    transition: { duration: 0.4, ease: [0.175, 0.885, 0.32, 1.275] } 
+    transition: springConfig 
   }
 };
 

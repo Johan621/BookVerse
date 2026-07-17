@@ -29,7 +29,7 @@ export const BookCard = ({ book }: { book: BookProps }) => {
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="group relative w-full h-full"
     >
-      <Card variant="glass" className="flex h-full flex-col overflow-hidden border-white/10 p-0 shadow-lg transition-all duration-300 hover:shadow-primary/20 hover:border-primary/30">
+      <Card variant="glass" className="flex h-full flex-col overflow-hidden border-white/10 p-0 shadow-lg transition-colors duration-300 hover:shadow-primary/20 hover:border-primary/30">
         
         {/* Top Image Section */}
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-muted/50 to-muted flex items-center justify-center">
@@ -46,7 +46,7 @@ export const BookCard = ({ book }: { book: BookProps }) => {
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60" />
           
-          <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 transform translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+          <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 transform translate-x-4 transition-colors duration-300 group-hover:opacity-100 group-hover:translate-x-0">
             <MagneticButton>
               <button onClick={() => toast.info("Coming soon!")} className="h-8 w-8 rounded-full glass border-white/20 flex items-center justify-center hover:bg-white/20 hover:text-red-400 transition-colors">
                 <Heart className="h-4 w-4" />

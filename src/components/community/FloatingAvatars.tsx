@@ -50,10 +50,10 @@ export const FloatingAvatars = () => {
                 
                 {/* Simulated connection line randomly showing */}
                 <motion.div
-                  initial={{ opacity: 0, width: 0 }}
-                  animate={{ opacity: [0, 0.5, 0], width: [0, 100, 0] }}
+                  initial={{ opacity: 0, scaleX: 0 }}
+                  animate={{ opacity: [0, 0.5, 0], scaleX: [0, 1, 0] }}
                   transition={{ duration: 3, delay: cluster.delay + 2, repeat: Infinity, repeatDelay: 5 }}
-                  className="absolute top-1/2 left-full h-[1px] bg-gradient-to-r from-primary to-transparent origin-left"
+                  className="absolute top-1/2 left-full h-[1px] w-[100px] bg-gradient-to-r from-primary to-transparent origin-left"
                 />
               </div>
             </Floating>

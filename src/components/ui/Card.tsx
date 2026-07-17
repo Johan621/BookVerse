@@ -10,7 +10,7 @@ export interface CardProps extends HTMLMotionProps<"div"> {
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = "default", padding = "md", children, ...props }, ref) => {
     
-    const baseStyles = "rounded-2xl overflow-hidden transition-all duration-200";
+    const baseStyles = "rounded-2xl overflow-hidden transition-colors duration-200";
     
     const variants = {
       default: "bg-secondary text-secondary-foreground shadow-sm border border-border",

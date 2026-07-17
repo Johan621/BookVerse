@@ -82,7 +82,7 @@ export const Navbar = () => {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-colors duration-300",
         isScrolled || isMobileMenuOpen ? "glass border-b border-white/5 py-3" : "bg-transparent py-5"
       )}
     >

@@ -84,10 +84,10 @@ export const DashboardMockup = () => {
                 {/* Simulated progress bar */}
                 <div className="w-full h-2 bg-background rounded-full mt-4 overflow-hidden border border-white/5">
                   <motion.div 
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "65%" }}
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 0.65 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400"
+                    className="h-full w-full bg-gradient-to-r from-emerald-500 to-emerald-400 origin-left"
                   />
                 </div>
               </Card>
