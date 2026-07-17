@@ -16,9 +16,9 @@ interface AuthLayoutProps {
 
 export const AuthLayout = ({ children, title, subtitle, quote = "“BookVerse AI completely changed how I find textbooks for my semester. I saved thousands of rupees and met amazing people on campus.”", quoteAuthor = "Sarah J., Engineering Student" }: AuthLayoutProps) => {
   return (
-    <div className="min-h-screen w-full flex bg-background">
+    <main className="min-h-screen w-full flex bg-background">
       {/* Left Panel: Form (Glassmorphism) */}
-      <div className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:w-1/2 xl:w-5/12 relative z-10">
+      <section className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:w-1/2 xl:w-5/12 relative z-10">
         <div className="mx-auto w-full max-w-sm lg:max-w-md">
           {/* Logo & Header */}
           <FadeIn>
@@ -29,9 +29,9 @@ export const AuthLayout = ({ children, title, subtitle, quote = "“BookVerse AI
               <span className="font-bold text-xl tracking-tight">BookVerse AI</span>
             </Link>
 
-            <h2 className="text-3xl font-extrabold tracking-tight mb-2">
+            <h1 className="text-3xl font-extrabold tracking-tight mb-2">
               {title}
-            </h2>
+            </h1>
             <p className="text-muted-foreground text-sm mb-8">
               {subtitle}
             </p>
@@ -42,10 +42,10 @@ export const AuthLayout = ({ children, title, subtitle, quote = "“BookVerse AI
             {children}
           </FadeIn>
         </div>
-      </div>
+      </section>
 
       {/* Right Panel: Immersive Background & Testimonial */}
-      <div className="hidden lg:flex flex-1 relative overflow-hidden items-center justify-center">
+      <aside className="hidden lg:flex flex-1 relative overflow-hidden items-center justify-center">
         {/* Background Animation */}
         <AnimatedAurora />
         
@@ -63,7 +63,7 @@ export const AuthLayout = ({ children, title, subtitle, quote = "“BookVerse AI
             </p>
           </FadeIn>
         </div>
-      </div>
-    </div>
+      </aside>
+    </main>
   );
 };

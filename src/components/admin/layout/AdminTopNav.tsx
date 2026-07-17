@@ -5,6 +5,7 @@ import { Search, Bell, Menu, Shield } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/common/Container";
+import { toast } from "sonner";
 
 export const AdminTopNav = () => {
   return (
@@ -13,7 +14,7 @@ export const AdminTopNav = () => {
         
         {/* Mobile Menu & Logo */}
         <div className="flex items-center gap-4 lg:hidden">
-          <Button variant="ghost" size="sm" className="p-2 -ml-2 rounded-lg">
+          <Button onClick={() => toast.info("Coming soon!")} variant="ghost" size="sm" className="p-2 -ml-2 rounded-lg">
             <Menu className="w-5 h-5" />
           </Button>
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-500 to-indigo-500 flex items-center justify-center">
@@ -32,14 +33,14 @@ export const AdminTopNav = () => {
 
         {/* Actions & Profile */}
         <div className="flex items-center gap-2 sm:gap-4 ml-auto lg:ml-0">
-          <Button variant="ghost" size="sm" className="relative p-2 rounded-full hover:bg-white/10">
+          <Button onClick={() => toast.info("Coming soon!")} variant="ghost" size="sm" className="relative p-2 rounded-full hover:bg-white/10">
             <Bell className="w-5 h-5 text-muted-foreground" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-purple-500 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
           </Button>
 
           <div className="w-px h-6 bg-white/10 hidden sm:block mx-2" />
 
-          <button className="flex items-center gap-3 p-1 pr-3 rounded-full hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+          <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-3 p-1 pr-3 rounded-full hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-600 to-purple-400 flex items-center justify-center text-xs font-bold text-white shadow-inner">
               SA
             </div>

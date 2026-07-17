@@ -16,6 +16,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { toast } from "sonner";
 
 const NAV_ITEMS = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
@@ -77,7 +78,7 @@ export const Sidebar = () => {
               <p className="text-xs text-muted-foreground truncate">john@college.edu</p>
             </div>
           </div>
-          <button className="flex items-center justify-center gap-2 w-full px-3 py-2.5 rounded-lg text-sm font-medium text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-colors">
+          <button onClick={() => toast.info("Coming soon!")} className="flex items-center justify-center gap-2 w-full px-3 py-2.5 rounded-lg text-sm font-medium text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-colors">
             <LogOut className="w-4 h-4" />
             Sign Out
           </button>

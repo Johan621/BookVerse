@@ -20,7 +20,7 @@ export const TestimonialCard = ({ testimonial }: { testimonial: TestimonialProps
   return (
     <Card 
       variant="glass" 
-      className="relative flex flex-col p-6 h-full border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 w-[350px] sm:w-[400px] shrink-0 mx-4"
+      className="relative flex flex-col p-6 h-full border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 w-[280px] sm:w-[350px] lg:w-[400px] shrink-0 mx-4"
     >
       {/* Top Section: User Info & Rating */}
       <div className="flex justify-between items-start mb-6">

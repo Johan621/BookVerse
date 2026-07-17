@@ -2,6 +2,7 @@ import * as React from "react";
 import { Repeat, CheckCircle2, Clock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "./EmptyStates";
+import { toast } from "sonner";
 
 const MOCK_EXCHANGES = [
   {
@@ -41,7 +42,7 @@ export const RecentExchanges = () => {
     <div className="flex flex-col h-full rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
       <div className="p-5 border-b border-white/10 flex items-center justify-between">
         <h3 className="font-bold">Recent Exchanges</h3>
-        <Button variant="ghost" size="sm" className="h-8 text-xs">
+        <Button onClick={() => toast.info("Coming soon!")} variant="ghost" size="sm" className="h-8 text-xs">
           View All
         </Button>
       </div>

@@ -67,7 +67,7 @@ export default function UploadBookPage() {
                   type="button"
                   onClick={addMockImage}
                   className="h-40 rounded-2xl border-2 border-dashed border-white/20 hover:border-primary/50 bg-white/5 hover:bg-primary/5 flex flex-col items-center justify-center gap-2 transition-all"
-                >
+                 aria-label="Action button">
                   <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

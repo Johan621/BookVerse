@@ -32,7 +32,7 @@ export const SuggestionPanel = ({ suggestedTitle, suggestedDescription, keywords
       
       <FadeIn delay={0.3} className="space-y-4 p-6 glass rounded-3xl border border-primary/20 relative">
         <div className="absolute top-0 right-0 p-4 flex gap-2">
-          <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-white/10" onClick={handleCopy}>
+          <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-white/10" onClick={handleCopy} aria-label="Action button">
             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-muted-foreground" />}
           </Button>
         </div>

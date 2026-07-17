@@ -70,7 +70,7 @@ export const UploadArea = ({ onFileSelect }: UploadAreaProps) => {
                 <FileImage className="w-4 h-4" />
                 Browse Files
               </div>
-              <input type="file" className="hidden" accept="image/*" onChange={handleChange} />
+              <input type="file" className="hidden" accept="image/*" onChange={handleChange}  aria-label="Input field" />
             </label>
             <Button variant="primary" className="flex-1 font-medium shadow-none h-10" onClick={() => {
               // Mock camera click

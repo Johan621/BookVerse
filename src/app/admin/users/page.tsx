@@ -3,6 +3,7 @@
 import { DataTable } from "@/components/admin/ui/DataTable";
 import { Badge } from "@/components/ui/Badge";
 import { MoreHorizontal, Shield, Ban, Mail } from "lucide-react";
+import { toast } from "sonner";
 
 // Mock Data
 const users = [
@@ -71,13 +72,13 @@ export default function ManageUsersPage() {
       header: "Actions",
       cell: (user: any) => (
         <div className="flex items-center gap-2">
-          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-foreground transition-colors" title="Email User">
+          <button onClick={() => toast.info("Coming soon!")} className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-foreground transition-colors" title="Email User">
             <Mail className="w-4 h-4" />
           </button>
-          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-red-400 transition-colors" title="Block User">
+          <button onClick={() => toast.info("Coming soon!")} className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-red-400 transition-colors" title="Block User">
             <Ban className="w-4 h-4" />
           </button>
-          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-purple-400 transition-colors" title="More Options">
+          <button onClick={() => toast.info("Coming soon!")} className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-purple-400 transition-colors" title="More Options">
             <MoreHorizontal className="w-4 h-4" />
           </button>
         </div>
@@ -92,7 +93,7 @@ export default function ManageUsersPage() {
           <h1 className="text-3xl font-bold tracking-tight text-foreground">Manage Users</h1>
           <p className="text-muted-foreground mt-1">View and manage platform users, roles, and account statuses.</p>
         </div>
-        <button className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-medium transition-colors shadow-[0_0_15px_rgba(147,51,234,0.3)]">
+        <button onClick={() => toast.info("Coming soon!")} className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-medium transition-colors shadow-[0_0_15px_rgba(147,51,234,0.3)]">
           Export Users
         </button>
       </div>

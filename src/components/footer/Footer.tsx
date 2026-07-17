@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/ui/Button";
+import { toast } from "sonner";
 import {
   BookOpen, Globe, MessageSquare, Share2, 
   Mail, ArrowRight 
@@ -57,8 +58,8 @@ export const Footer = () => {
                   type="email" 
                   placeholder="Enter your college email" 
                   className="w-full h-11 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-foreground focus:outline-none focus:border-primary/50 transition-colors placeholder:text-muted-foreground"
-                />
-                <Button size="icon" className="absolute right-1 top-1 bottom-1 h-9 w-9 bg-primary hover:bg-primary/90 text-white">
+                 aria-label="Input field" />
+                <Button onClick={() => toast.info("Coming soon!")} size="icon" className="absolute right-1 top-1 bottom-1 h-9 w-9 bg-primary hover:bg-primary/90 text-white">
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
@@ -71,7 +72,7 @@ export const Footer = () => {
             <ul className="flex flex-col gap-3">
               {['Explore Books', 'How It Works', 'AI Features', 'Pricing'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -85,7 +86,7 @@ export const Footer = () => {
             <ul className="flex flex-col gap-3">
               {['Help Center', 'Safety Guide', 'Campus Reps', 'Blog'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -97,13 +98,13 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-foreground text-sm tracking-wider uppercase">Connect</h4>
             <div className="flex items-center gap-4 mb-4">
-              <Link href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
+              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
                 <Globe className="w-4 h-4" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
+              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
                 <MessageSquare className="w-4 h-4" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
+              <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="w-10 h-10 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 transition-all border-white/10">
                 <Share2 className="w-4 h-4" />
               </Link>
             </div>
@@ -122,14 +123,14 @@ export const Footer = () => {
             &copy; {year || "2026"} BookVerse AI. All rights reserved.
           </p>
           
-          <div className="flex items-center gap-6">
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+            <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Terms of Service
             </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Coming Soon!"); }} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Cookie Policy
             </Link>
           </div>

@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} min-h-screen font-sans antialiased bg-background text-foreground`}>
+      <body className={`${inter.variable} min-h-screen font-sans antialiased bg-background text-foreground overflow-x-hidden`}>
         <Providers>
           <AnimatedCursor />
           <BackgroundWrapper>

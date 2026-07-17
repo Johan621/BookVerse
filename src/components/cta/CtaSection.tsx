@@ -11,10 +11,11 @@ import { Button } from "@/components/ui/Button";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { AnimatedAurora } from "@/components/background/AnimatedAurora";
 import { BookOpen, ArrowRight, Sparkles } from "lucide-react";
+import { toast } from "sonner";
 
 export const CtaSection = () => {
   return (
-    <Section className="py-32 relative z-10 overflow-hidden bg-background flex items-center justify-center min-h-[80vh]">
+    <Section className="flex items-center justify-center min-h-[80vh]">
       
       {/* Immersive Animated Background */}
       <div className="absolute inset-0 z-0">
@@ -73,12 +74,12 @@ export const CtaSection = () => {
 
               <FadeIn delay={0.3} className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                 <MagneticButton>
-                  <Button size="lg" className="h-14 px-8 text-base font-bold bg-white text-black hover:bg-white/90 gap-2 w-full sm:w-auto shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+                  <Button onClick={() => toast.info("Coming soon!")} size="lg" className="h-14 px-8 text-base font-bold bg-white text-black hover:bg-white/90 gap-2 w-full sm:w-auto shadow-[0_0_40px_rgba(255,255,255,0.3)]">
                     Start Exploring <ArrowRight className="w-5 h-5" />
                   </Button>
                 </MagneticButton>
                 <MagneticButton>
-                  <Button size="lg" variant="outline" className="h-14 px-8 text-base font-bold text-white border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-md w-full sm:w-auto">
+                  <Button onClick={() => toast.info("Coming soon!")} size="lg" variant="outline" className="h-14 px-8 text-base font-bold text-white border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-md w-full sm:w-auto">
                     List Your First Book
                   </Button>
                 </MagneticButton>

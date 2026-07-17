@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { StatCard } from "@/components/admin/ui/StatCard";
 import { ActivityChart } from "@/components/admin/charts/ActivityChart";
+import { toast } from "sonner";
 
 // Mock Data
 const stats = [
@@ -92,7 +93,7 @@ export default function AdminOverview() {
               </div>
             ))}
           </div>
-          <button className="w-full mt-6 py-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-sm font-medium border border-white/10">
+          <button onClick={() => toast.info("Coming soon!")} className="w-full mt-6 py-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-sm font-medium border border-white/10">
             View All Activity
           </button>
         </div>

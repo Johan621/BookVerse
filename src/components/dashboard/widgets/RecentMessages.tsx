@@ -2,6 +2,7 @@ import * as React from "react";
 import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "./EmptyStates";
+import { toast } from "sonner";
 
 const MOCK_MESSAGES = [
   {
@@ -44,7 +45,7 @@ export const RecentMessages = () => {
     <div className="flex flex-col h-full rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
       <div className="p-5 border-b border-white/10 flex items-center justify-between">
         <h3 className="font-bold">Messages</h3>
-        <Button variant="ghost" size="sm" className="h-8 text-xs">
+        <Button onClick={() => toast.info("Coming soon!")} variant="ghost" size="sm" className="h-8 text-xs">
           Open Chat
         </Button>
       </div>

@@ -10,6 +10,7 @@ import { StaggerItem } from "@/components/animations/StaggerItem";
 import { BookCard, BookProps } from "./BookCard";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
+import { toast } from "sonner";
 
 const MOCK_BOOKS: BookProps[] = [
   {
@@ -104,7 +105,7 @@ const MOCK_BOOKS: BookProps[] = [
 
 export const FeaturedBooks = () => {
   return (
-    <Section className="py-24 relative z-10 bg-background/50">
+    <Section className="bg-background/50">
       <Container>
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
           <FadeIn>
@@ -114,7 +115,7 @@ export const FeaturedBooks = () => {
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <Button variant="outline" className="gap-2 glass">
+            <Button onClick={() => toast.info("Coming soon!")} variant="outline" className="gap-2 glass">
               View All Books <ArrowRight className="h-4 w-4" />
             </Button>
           </FadeIn>

@@ -136,21 +136,21 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
             <Button
               variant="primary"
               className="flex items-center gap-2"
-              onClick={() => alert("Exchange flow (mock) triggered")}
+              onClick={() = aria-label="Action button"> alert("Exchange flow (mock) triggered")}
             >
               <ArrowRight className="w-4 h-4" /> Exchange
             </Button>
             <Button
               variant="outline"
               className="flex items-center gap-2"
-              onClick={() => alert("Chat flow (mock) triggered")}
+              onClick={() = aria-label="Action button"> alert("Chat flow (mock) triggered")}
             >
               <MessageSquare className="w-4 h-4" /> Chat
             </Button>
             <Button
               variant={isWishlisted ? "secondary" : "ghost"}
               className="flex items-center gap-2"
-              onClick={() => setWishlisted(!isWishlisted)}
+              onClick={() = aria-label="Action button"> setWishlisted(!isWishlisted)}
             >
               <Heart className={`w-4 h-4 ${isWishlisted ? "text-primary" : ""}`} />
               {isWishlisted ? "Wishlisted" : "Add to Wishlist"}
@@ -158,7 +158,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
             <Button
               variant={isBookmarked ? "secondary" : "ghost"}
               className="flex items-center gap-2"
-              onClick={() => setBookmarked(!isBookmarked)}
+              onClick={() = aria-label="Action button"> setBookmarked(!isBookmarked)}
             >
               <Bookmark className={`w-4 h-4 ${isBookmarked ? "text-primary" : ""}`} />
               {isBookmarked ? "Bookmarked" : "Bookmark"}

@@ -61,7 +61,7 @@ const TRUST_METRICS = [
 
 export const TrustSection = () => {
   return (
-    <Section id="trust" className="py-24 relative z-10 bg-background/30">
+    <Section id="trust" className="bg-background/30">
       <Container>
         <FadeIn className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-sm font-bold mb-6 border border-emerald-500/20">

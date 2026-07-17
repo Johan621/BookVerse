@@ -62,7 +62,7 @@ export default function ExchangeDetailsPage({ params }: { params: { id: string }
           </Link>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">Exchange Details</h1>
         </div>
-        <Button variant="outline" className="w-full sm:w-auto">
+        <Button onClick={() => toast.info("Coming soon!")} variant="outline" className="w-full sm:w-auto">
           <MessageSquare className="w-4 h-4 mr-2" /> Chat with {MOCK_EXCHANGE.otherUser.name.split(" ")[0]}
         </Button>
       </FadeIn>

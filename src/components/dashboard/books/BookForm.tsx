@@ -106,7 +106,7 @@ export const BookForm = ({ initialData, isEditing = false }: BookFormProps) => {
                 type="button"
                 onClick={handleImageMock}
                 className="h-40 rounded-2xl border-2 border-dashed border-white/20 hover:border-primary/50 bg-white/5 hover:bg-primary/5 flex flex-col items-center justify-center gap-2 transition-all group"
-              >
+               aria-label="Action button">
                 <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <UploadCloud className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
@@ -116,7 +116,7 @@ export const BookForm = ({ initialData, isEditing = false }: BookFormProps) => {
 
             {images.map((img, idx) => (
               <div key={img} className="h-40 rounded-2xl bg-white/10 border border-white/10 relative overflow-hidden flex items-center justify-center group">
-                <ImageIcon className="w-10 h-10 text-muted-foreground/50" />
+                <ImageIcon className="w-10 h-10 text-muted-foreground/50"  alt="" />
                 <button
                   type="button"
                   onClick={() => removeImageMock(idx)}

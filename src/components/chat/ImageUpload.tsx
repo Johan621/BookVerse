@@ -8,7 +8,7 @@ interface ImageUploadProps {
   onSelect: (file: File) => void
 }
 
-export const ImageUpload: React.FC<ImageUploadProps> = ({ onSelect }) => {
+export const ImageUpload: React.FC<ImageUploadProps alt=""> = ({ onSelect }) => {
   const inputRef = React.useRef<HTMLInputElement>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +23,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onSelect }) => {
       <button
         type="button"
         className={cn("p-2 rounded-md hover:bg-white/10 transition-colors")}
-        onClick={() => inputRef.current?.click()}
+        onClick={() = aria-label="Action button"> inputRef.current?.click()}
         aria-label="Upload image"
       >
         {/* Simple camera icon via emoji */}
@@ -35,7 +35,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onSelect }) => {
         ref={inputRef}
         className="hidden"
         onChange={handleChange}
-      />
+       aria-label="Input field" />
     </div>
   )
 }

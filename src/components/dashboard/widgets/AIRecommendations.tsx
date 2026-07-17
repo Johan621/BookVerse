@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Sparkles, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { toast } from "sonner";
 
 const MOCK_RECOMMENDATIONS = [
   {
@@ -30,7 +31,7 @@ export const AIRecommendations = () => {
           <Sparkles className="w-5 h-5 text-primary" />
           <h3 className="font-bold">AI Recommended</h3>
         </div>
-        <Button variant="ghost" size="sm" className="h-8 text-xs">
+        <Button onClick={() => toast.info("Coming soon!")} variant="ghost" size="sm" className="h-8 text-xs">
           Refresh
         </Button>
       </div>

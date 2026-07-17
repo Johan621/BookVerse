@@ -4,6 +4,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { toast } from "sonner";
 import { 
   BookUp, BookDown, Repeat, Heart, 
   Bell, Check, X, Sparkles, IndianRupee,
@@ -24,7 +25,7 @@ export const DashboardMockup = () => {
       >
         
         {/* Header bar */}
-        <div className="flex items-center justify-between pb-4 border-b border-white/10">
+        <header className="flex items-center justify-between pb-4 border-b border-white/10">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-blue-500 shadow-inner flex items-center justify-center font-bold text-white">
               JD
@@ -40,7 +41,7 @@ export const DashboardMockup = () => {
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse" />
             </div>
           </div>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           
@@ -106,10 +107,10 @@ export const DashboardMockup = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <button className="w-6 h-6 rounded-md bg-emerald-500/20 text-emerald-400 flex items-center justify-center hover:bg-emerald-500/30 transition-colors">
+                      <button aria-label="Accept Request" onClick={() => toast.info("Coming soon!")} className="w-6 h-6 rounded-md bg-emerald-500/20 text-emerald-400 flex items-center justify-center hover:bg-emerald-500/30 transition-colors">
                         <Check className="w-3 h-3" />
                       </button>
-                      <button className="w-6 h-6 rounded-md bg-rose-500/20 text-rose-400 flex items-center justify-center hover:bg-rose-500/30 transition-colors">
+                      <button aria-label="Decline Request" onClick={() => toast.info("Coming soon!")} className="w-6 h-6 rounded-md bg-rose-500/20 text-rose-400 flex items-center justify-center hover:bg-rose-500/30 transition-colors">
                         <X className="w-3 h-3" />
                       </button>
                     </div>
@@ -122,7 +123,7 @@ export const DashboardMockup = () => {
           </div>
 
           {/* Right Sidebar Area (Col 4) */}
-          <div className="flex flex-col gap-6">
+          <aside className="flex flex-col gap-6">
             
             {/* AI Recommendations */}
             <Card variant="glass" className="p-5 border-white/5 bg-white/5 flex-1 relative overflow-hidden">
@@ -175,7 +176,7 @@ export const DashboardMockup = () => {
               </div>
             </Card>
 
-          </div>
+          </aside>
         </div>
 
       </motion.div>

@@ -3,6 +3,7 @@
 import { DataTable } from "@/components/admin/ui/DataTable";
 import { MoreHorizontal, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
+import { toast } from "sonner";
 
 // Mock Data
 const books = [
@@ -60,13 +61,13 @@ export default function ManageBooksPage() {
       header: "Actions",
       cell: (book: any) => (
         <div className="flex items-center gap-2">
-          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-blue-400 transition-colors" title="Edit Book">
+          <button onClick={() => toast.info("Coming soon!")} className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-blue-400 transition-colors" title="Edit Book">
             <Edit className="w-4 h-4" />
           </button>
-          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-red-400 transition-colors" title="Delete Book">
+          <button onClick={() => toast.info("Coming soon!")} className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-red-400 transition-colors" title="Delete Book">
             <Trash2 className="w-4 h-4" />
           </button>
-          <button className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-purple-400 transition-colors" title="More Options">
+          <button onClick={() => toast.info("Coming soon!")} className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-purple-400 transition-colors" title="More Options">
             <MoreHorizontal className="w-4 h-4" />
           </button>
         </div>

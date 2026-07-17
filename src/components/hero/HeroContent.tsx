@@ -9,6 +9,7 @@ import { StaggerItem } from "@/components/animations/StaggerItem";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { Button } from "@/components/ui/Button";
 import { AnimatedCounter } from "./AnimatedCounter";
+import { toast } from "sonner";
 
 const stats = [
   { label: "Books Shared", value: 12000, suffix: "+" },
@@ -41,12 +42,12 @@ export const HeroContent = () => {
       {/* CTAs */}
       <SlideUp delay={0.8} className="flex flex-wrap items-center gap-4">
         <MagneticButton className="bg-transparent border-none p-0 focus:outline-none">
-          <Button size="lg" variant="primary" className="h-12 px-8 text-base shadow-lg shadow-primary/20">
+          <Button onClick={() => toast.info("Coming soon!")} size="lg" variant="primary" className="h-12 px-8 text-base shadow-lg shadow-primary/20">
             Explore Books
           </Button>
         </MagneticButton>
         <MagneticButton className="bg-transparent border-none p-0 focus:outline-none">
-          <Button size="lg" variant="glass" className="h-12 px-8 text-base">
+          <Button onClick={() => toast.info("Coming soon!")} size="lg" variant="glass" className="h-12 px-8 text-base">
             List Your Book
           </Button>
         </MagneticButton>

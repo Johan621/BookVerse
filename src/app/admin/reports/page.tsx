@@ -2,6 +2,7 @@
 
 import { DataTable } from "@/components/admin/ui/DataTable";
 import { Flag, Eye, MessageSquareWarning } from "lucide-react";
+import { toast } from "sonner";
 
 // Mock Data
 const reportsData = [
@@ -57,11 +58,11 @@ export default function ReportsPage() {
       header: "Actions",
       cell: (item: any) => (
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-medium text-foreground">
+          <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-medium text-foreground">
             <Eye className="w-4 h-4" />
             Review
           </button>
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-500/20 border border-purple-500/30 hover:bg-purple-500/30 transition-colors text-xs font-medium text-purple-300">
+          <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-purple-500/20 border border-purple-500/30 hover:bg-purple-500/30 transition-colors text-xs font-medium text-purple-300">
             <MessageSquareWarning className="w-4 h-4" />
             Contact
           </button>

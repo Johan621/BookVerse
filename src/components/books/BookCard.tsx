@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Bookmark, Heart, Star, CheckCircle2, Eye } from "lucide-react";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 // import { Floating } from "@/components/animations/Floating";
+import { toast } from "sonner";
 
 export interface BookProps {
   id: string;
@@ -47,12 +48,12 @@ export const BookCard = ({ book }: { book: BookProps }) => {
           
           <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 transform translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
             <MagneticButton>
-              <button className="h-8 w-8 rounded-full glass border-white/20 flex items-center justify-center hover:bg-white/20 hover:text-red-400 transition-colors">
+              <button onClick={() => toast.info("Coming soon!")} className="h-8 w-8 rounded-full glass border-white/20 flex items-center justify-center hover:bg-white/20 hover:text-red-400 transition-colors">
                 <Heart className="h-4 w-4" />
               </button>
             </MagneticButton>
             <MagneticButton>
-              <button className="h-8 w-8 rounded-full glass border-white/20 flex items-center justify-center hover:bg-white/20 hover:text-blue-400 transition-colors">
+              <button onClick={() => toast.info("Coming soon!")} className="h-8 w-8 rounded-full glass border-white/20 flex items-center justify-center hover:bg-white/20 hover:text-blue-400 transition-colors">
                 <Bookmark className="h-4 w-4" />
               </button>
             </MagneticButton>
@@ -99,7 +100,7 @@ export const BookCard = ({ book }: { book: BookProps }) => {
                   </>
                 )}
               </div>
-              <button className="flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary/80 transition-colors">
+              <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary/80 transition-colors">
                 <Eye className="h-3 w-3" /> Quick View
               </button>
             </div>

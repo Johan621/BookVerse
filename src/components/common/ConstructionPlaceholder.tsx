@@ -24,7 +24,7 @@ export const ConstructionPlaceholder = ({
   description = "This page is currently under construction. We're building something amazing here.",
 }: ConstructionPlaceholderProps) => {
   return (
-    <Section className="py-24 md:py-32 relative z-10 flex flex-1 flex-col bg-background min-h-[calc(100vh-80px)]">
+    <Section className="md:py-32 flex flex-1 flex-col min-h-[calc(100vh-80px)]">
       <Container>
         {/* Breadcrumb Navigation */}
         <FadeIn className="mb-8">

@@ -34,7 +34,7 @@ const CATEGORIES = [
 
 export const CategoryGrid = () => {
   return (
-    <Section className="py-24 relative z-10">
+    <Section className="">
       <Container>
         <FadeIn className="text-center mb-16">
           <SectionHeading>Explore by Discipline</SectionHeading>

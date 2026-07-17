@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 // Mock AI result data
 const mockResult = {
@@ -97,7 +98,7 @@ export const BookScanner = () => {
               className="hidden"
               onChange={onFileChange}
             />
-            <Button variant="ghost">
+            <Button onClick={() => toast.info("Coming soon!")} variant="ghost">
               <span className="cursor-pointer">{previewUrl ? "Change Image" : "Choose Image"}</span>
             </Button>
           </label>

@@ -2,6 +2,7 @@ import * as React from "react";
 import { Heart, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "./EmptyStates";
+import { toast } from "sonner";
 
 const MOCK_WISHLIST = [
   {
@@ -39,7 +40,7 @@ export const WishlistPreview = () => {
     <div className="flex flex-col h-full rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
       <div className="p-5 border-b border-white/10 flex items-center justify-between">
         <h3 className="font-bold">My Wishlist</h3>
-        <Button variant="ghost" size="sm" className="h-8 text-xs">
+        <Button onClick={() => toast.info("Coming soon!")} variant="ghost" size="sm" className="h-8 text-xs">
           View All
         </Button>
       </div>
@@ -52,7 +53,7 @@ export const WishlistPreview = () => {
                 <p className="text-sm font-semibold text-foreground truncate">{item.title}</p>
                 <p className="text-xs text-muted-foreground mt-0.5 truncate">{item.author}</p>
               </div>
-              <button className="p-2 text-muted-foreground hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+              <button onClick={() => toast.info("Coming soon!")} className="p-2 text-muted-foreground hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
                 <Trash2 className="w-4 h-4" />
               </button>
             </li>

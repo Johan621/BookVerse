@@ -58,7 +58,7 @@ export const ChatArea = ({ conversation, messages, isTyping, onBack, onSendMessa
       {/* Header */}
       <div className="p-4 border-b border-white/10 flex items-center justify-between bg-white/5 backdrop-blur-xl shrink-0">
         <div className="flex items-center gap-3">
-          <button onClick={onBack} className="p-2 -ml-2 rounded-lg hover:bg-white/10 md:hidden transition-colors">
+          <button onClick={onBack} className="p-2 -ml-2 rounded-lg hover:bg-white/10 md:hidden transition-colors" aria-label="Action button">
             <ArrowLeft className="w-5 h-5 text-foreground" />
           </button>
           
@@ -122,7 +122,7 @@ export const ChatArea = ({ conversation, messages, isTyping, onBack, onSendMessa
         <form onSubmit={handleSend} className="flex items-end gap-2 relative">
           
           <Button type="button" variant="ghost" size="sm" className="h-12 w-12 rounded-full shrink-0" onClick={handleImageMock}>
-            <ImageIcon className="w-5 h-5" />
+            <ImageIcon className="w-5 h-5"  alt="" />
           </Button>
 
           <div className="flex-1 relative">

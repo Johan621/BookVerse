@@ -15,7 +15,7 @@ import { MouseReactiveLight } from "@/components/background/MouseReactiveLight";
 
 export const Hero = () => {
   return (
-    <Section className="relative min-h-screen w-full flex items-center pt-20 overflow-hidden">
+    <Section className="relative overflow-hidden min-h-screen w-full flex items-center pt-20">
       {/* Background Layers */}
       <AnimatedAurora />
       <GradientMesh />

@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 
 export const AboutSection = () => {
   return (
-    <Section id="about" className="py-24 relative z-10 overflow-hidden bg-background">
+    <Section id="about" className="">
       <Container>
         <FadeIn>
           <div className="flex flex-col items-center text-center">

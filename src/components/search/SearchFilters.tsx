@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ChevronDown, Filter } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 const FILTERS = [
   { label: "Department", options: ["Computer Science", "Mechanical", "Civil", "Electrical", "Electronics"] },
@@ -50,7 +51,7 @@ export const SearchFilters = () => {
                 >
                   <div className="flex flex-col gap-1">
                     {filter.options.map((option) => (
-                      <button
+                      <button onClick={() => toast.info("Coming soon!")}
                         key={option}
                         className="w-full text-left rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-white/10 hover:text-foreground transition-colors focus:outline-none"
                       >

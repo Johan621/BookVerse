@@ -40,7 +40,7 @@ export const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <Section id="faq" className="py-24 relative z-10 bg-background/50">
+    <Section id="faq" className="bg-background/50">
       <Container>
         <div className="flex flex-col items-center text-center mb-16">
           <FadeIn>

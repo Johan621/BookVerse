@@ -4,6 +4,7 @@ import * as React from "react";
 import { Search, Mic, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { toast } from "sonner";
 
 export const SmartSearchBar = () => {
   return (
@@ -29,16 +30,16 @@ export const SmartSearchBar = () => {
           type="text"
           placeholder="Ask AI to find a book, syllabus, or topic..."
           className="h-full w-full bg-transparent px-2 text-lg font-medium text-foreground placeholder:text-muted-foreground/70 focus:outline-none"
-        />
+         aria-label="Input field" />
         
         <div className="flex h-full items-center pr-2 gap-2">
           {/* Voice Search Button */}
-          <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full hover:bg-white/10 hover:text-primary transition-colors">
+          <Button onClick={() => toast.info("Coming soon!")} variant="ghost" size="icon" className="h-10 w-10 rounded-full hover:bg-white/10 hover:text-primary transition-colors">
             <Mic className="h-5 w-5" />
             <span className="sr-only">Voice Search</span>
           </Button>
           
-          <Button variant="primary" className="h-12 rounded-full px-8 text-base shadow-md">
+          <Button onClick={() => toast.info("Coming soon!")} variant="primary" className="h-12 rounded-full px-8 text-base shadow-md">
             Search
           </Button>
         </div>

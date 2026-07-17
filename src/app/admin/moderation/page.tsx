@@ -2,6 +2,7 @@
 
 import { DataTable } from "@/components/admin/ui/DataTable";
 import { Check, X, AlertTriangle } from "lucide-react";
+import { toast } from "sonner";
 
 // Mock Data
 const moderationQueue = [
@@ -43,11 +44,11 @@ export default function ModerationQueuePage() {
       header: "Actions",
       cell: (item: any) => (
         <div className="flex items-center gap-3">
-          <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-500/10 text-green-400 hover:bg-green-500/20 border border-green-500/20 transition-all font-medium text-xs">
+          <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-500/10 text-green-400 hover:bg-green-500/20 border border-green-500/20 transition-all font-medium text-xs">
             <Check className="w-4 h-4" />
             Approve
           </button>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20 transition-all font-medium text-xs">
+          <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20 transition-all font-medium text-xs">
             <X className="w-4 h-4" />
             Reject
           </button>

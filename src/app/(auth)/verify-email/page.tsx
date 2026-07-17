@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { MailCheck } from "lucide-react";
 import { Metadata } from "next";
+import { toast } from "sonner";
 
 export const metadata: Metadata = {
   title: "Verify Email - BookVerse AI",
@@ -27,7 +28,7 @@ export default function VerifyEmailPage() {
         </p>
 
         <div className="flex flex-col gap-4 pt-4">
-          <Button variant="primary" className="w-full h-12 text-base font-bold">
+          <Button onClick={() => toast.info("Coming soon!")} variant="primary" className="w-full h-12 text-base font-bold">
             Resend Verification Email
           </Button>
           

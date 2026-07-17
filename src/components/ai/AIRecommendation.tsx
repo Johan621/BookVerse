@@ -40,7 +40,7 @@ const FEATURES = [
 
 export const AIRecommendation = () => {
   return (
-    <Section className="py-24 relative z-10 overflow-hidden">
+    <Section className="">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           

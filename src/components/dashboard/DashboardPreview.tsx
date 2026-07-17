@@ -10,7 +10,7 @@ import { LayoutDashboard } from "lucide-react";
 
 export const DashboardPreview = () => {
   return (
-    <Section className="py-24 relative z-10 overflow-hidden bg-background">
+    <Section className="">
       <Container>
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <FadeIn>

@@ -12,7 +12,7 @@ import { SearchFilters } from "./SearchFilters";
 
 export const SmartSearchSection = () => {
   return (
-    <Section className="relative z-10 -mt-12 lg:-mt-24 pb-24">
+    <Section className="-mt-12 lg:-mt-24 pb-24">
       <Container>
         <div className="flex flex-col items-center w-full">
           <FadeIn className="text-center mb-10">

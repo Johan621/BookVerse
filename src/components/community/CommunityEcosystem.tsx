@@ -11,7 +11,7 @@ import { Sparkles } from "lucide-react";
 
 export const CommunityEcosystem = () => {
   return (
-    <Section id="community" className="py-24 relative z-10 overflow-hidden bg-background">
+    <Section id="community" className="">
       
       {/* Background Interactive Map / Floating Avatars */}
       <FloatingAvatars />

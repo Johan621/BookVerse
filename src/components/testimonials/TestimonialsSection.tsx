@@ -10,7 +10,7 @@ import { Heart } from "lucide-react";
 
 export const TestimonialsSection = () => {
   return (
-    <Section id="testimonials" className="py-24 relative z-10 overflow-hidden bg-background">
+    <Section id="testimonials" className="">
       <Container>
         <div className="flex flex-col items-center text-center mb-12">
           <FadeIn>

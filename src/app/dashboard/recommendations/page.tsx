@@ -4,6 +4,7 @@ import * as React from "react";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Sparkles, TrendingUp, BookOpen, ChevronRight } from "lucide-react";
 import { BookCard } from "@/components/dashboard/books/BookCard";
+import { toast } from "sonner";
 
 const MOCK_MAJOR = [
   { id: "b1", title: "Data Structures & Algorithms", author: "Narasimha Karumanchi", status: "PUBLISHED", views: 124, condition: "Good" },
@@ -44,7 +45,7 @@ export default function AIRecommendationsPage() {
             </div>
             <h2 className="text-xl font-bold">Based on your major: <span className="text-primary">Computer Science</span></h2>
           </div>
-          <button className="text-sm font-semibold text-muted-foreground hover:text-foreground flex items-center transition-colors">
+          <button onClick={() => toast.info("Coming soon!")} className="text-sm font-semibold text-muted-foreground hover:text-foreground flex items-center transition-colors">
             See all <ChevronRight className="w-4 h-4 ml-1" />
           </button>
         </div>
@@ -67,7 +68,7 @@ export default function AIRecommendationsPage() {
             </div>
             <h2 className="text-xl font-bold">Trending at <span className="text-emerald-500">State University</span></h2>
           </div>
-          <button className="text-sm font-semibold text-muted-foreground hover:text-foreground flex items-center transition-colors">
+          <button onClick={() => toast.info("Coming soon!")} className="text-sm font-semibold text-muted-foreground hover:text-foreground flex items-center transition-colors">
             See all <ChevronRight className="w-4 h-4 ml-1" />
           </button>
         </div>

@@ -57,7 +57,7 @@ export const ExchangeWorkflow = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <Section className="py-24 relative z-10 overflow-hidden">
+    <Section className="">
       <Container>
         <FadeIn className="text-center mb-20">
           <SectionHeading>How It Works</SectionHeading>

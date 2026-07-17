@@ -38,7 +38,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend }) => {
             "placeholder:text-muted-foreground"
           )}
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) = aria-label="Input field"> setText(e.target.value)}
         />
         {/* Emoji button */}
         <button
@@ -53,7 +53,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend }) => {
           😊
         </button>
         {/* Image upload button */}
-        <ImageUpload onSelect={(file) => console.log("image selected", file)} />
+        <ImageUpload onSelect={(file) = alt=""> console.log("image selected", file)} />
         {showEmoji && (
           <EmojiPicker onSelect={handleEmojiSelect} onClose={() => setShowEmoji(false)} />
         )}

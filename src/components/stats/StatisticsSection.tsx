@@ -59,7 +59,7 @@ const STATS = [
 
 export const StatisticsSection = () => {
   return (
-    <Section className="py-24 relative z-10 overflow-hidden bg-background">
+    <Section className="">
       
       {/* Background Particles */}
       <div className="absolute inset-0 z-0 opacity-40">

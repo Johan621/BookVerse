@@ -3,7 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
+import { toast } from "sonner";
+import {
   LayoutDashboard, 
   Users, 
   BookOpen, 
@@ -62,7 +63,7 @@ export const AdminSidebar = () => {
 
       {/* Bottom Actions */}
       <div className="p-4 border-t border-white/10 space-y-1">
-        <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-muted-foreground hover:bg-white/5 hover:text-foreground transition-all">
+        <button onClick={() => toast.info("Coming soon!")} className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-muted-foreground hover:bg-white/5 hover:text-foreground transition-all">
           <Settings className="w-5 h-5" />
           <span>Settings</span>
         </button>
