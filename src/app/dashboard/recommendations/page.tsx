@@ -6,17 +6,17 @@ import { Sparkles, TrendingUp, BookOpen, ChevronRight } from "lucide-react";
 import { BookCard } from "@/components/dashboard/books/BookCard";
 
 const MOCK_MAJOR = [
-  { id: "b1", title: "Data Structures & Algorithms", author: "Narasimha Karumanchi", status: "PUBLISHED" as any, views: 124, condition: "Good" },
-  { id: "b2", title: "Computer Architecture", author: "Patterson", status: "PUBLISHED" as any, views: 89, condition: "Like New" },
-  { id: "b3", title: "Discrete Mathematics", author: "Rosen", status: "PUBLISHED" as any, views: 256, condition: "Fair" },
-  { id: "b4", title: "Clean Code", author: "Robert C. Martin", status: "PUBLISHED" as any, views: 432, condition: "New" },
+  { id: "b1", title: "Data Structures & Algorithms", author: "Narasimha Karumanchi", status: "PUBLISHED", views: 124, condition: "Good" },
+  { id: "b2", title: "Computer Architecture", author: "Patterson", status: "PUBLISHED", views: 89, condition: "Like New" },
+  { id: "b3", title: "Discrete Mathematics", author: "Rosen", status: "PUBLISHED", views: 256, condition: "Fair" },
+  { id: "b4", title: "Clean Code", author: "Robert C. Martin", status: "PUBLISHED", views: 432, condition: "New" },
 ];
 
 const MOCK_TRENDING = [
-  { id: "b5", title: "University Physics", author: "Young & Freedman", status: "PUBLISHED" as any, views: 890, condition: "Good" },
-  { id: "b6", title: "Calculus Early Transcendentals", author: "Stewart", status: "PUBLISHED" as any, views: 765, condition: "Poor" },
-  { id: "b7", title: "Microeconomics", author: "Mankiw", status: "PUBLISHED" as any, views: 543, condition: "Like New" },
-  { id: "b8", title: "Organic Chemistry", author: "Wade", status: "PUBLISHED" as any, views: 421, condition: "Fair" },
+  { id: "b5", title: "University Physics", author: "Young & Freedman", status: "PUBLISHED", views: 890, condition: "Good" },
+  { id: "b6", title: "Calculus Early Transcendentals", author: "Stewart", status: "PUBLISHED", views: 765, condition: "Poor" },
+  { id: "b7", title: "Microeconomics", author: "Mankiw", status: "PUBLISHED", views: 543, condition: "Like New" },
+  { id: "b8", title: "Organic Chemistry", author: "Wade", status: "PUBLISHED", views: 421, condition: "Fair" },
 ];
 
 export default function AIRecommendationsPage() {

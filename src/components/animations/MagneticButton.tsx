@@ -42,7 +42,7 @@ export const MagneticButton = React.forwardRef<HTMLDivElement, MagneticButtonPro
         onMouseMove={handleMouse}
         onMouseLeave={reset}
         animate={{ x: position.x, y: position.y }}
-        transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 } as any}
+        transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
         {...props}
       >
         {children}

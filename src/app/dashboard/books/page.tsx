@@ -83,13 +83,15 @@ export default function BooksPage() {
       {!isLoading && (
         <FadeIn delay={0.1}>
           <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
-            {["ALL", "PUBLISHED", "DRAFT", "EXCHANGED", "SOLD", "DONATION"].map((status) => (
+            {(
+              ["ALL", "PUBLISHED", "DRAFT", "EXCHANGED", "SOLD", "DONATION"] as const
+            ).map((status) => (
               <button
                 key={status}
-                onClick={() => setFilter(status as any)}
+                onClick={() => setFilter(status)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-colors border ${
-                  filter === status 
-                    ? "bg-primary/20 text-primary border-primary/30" 
+                  filter === status
+                    ? "bg-primary/20 text-primary border-primary/30"
                     : "bg-white/5 text-muted-foreground border-white/10 hover:bg-white/10"
                 }`}
               >

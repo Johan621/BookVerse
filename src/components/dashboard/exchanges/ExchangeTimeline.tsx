@@ -32,7 +32,7 @@ const getEventBg = (type: TimelineEvent["type"]) => {
 export const ExchangeTimeline = ({ events }: { events: TimelineEvent[] }) => {
   return (
     <div className="relative border-l border-white/10 ml-6 py-4 space-y-8">
-      {events.map((event, idx) => (
+      {events.map((event) => (
         <div key={event.id} className="relative pl-8 group">
           {/* Timeline Dot */}
           <div className={`absolute -left-[17px] top-1 w-8 h-8 rounded-full border border-background flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 ${getEventBg(event.type)}`}>

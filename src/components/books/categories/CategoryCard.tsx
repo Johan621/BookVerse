@@ -33,10 +33,15 @@ export const CategoryCard = ({ title, icon: Icon, count, colorClass }: CategoryC
         }
       }, 30);
       return () => clearInterval(timer);
-    } else {
-      setDisplayCount(count);
     }
   }, [isHovered, count]);
+
+  // Sync displayCount with count when count changes or when not hovered
+  useEffect(() => {
+    if (!isHovered) {
+      setDisplayCount(count);
+    }
+  }, [count, isHovered]);
 
   return (
     <motion.div

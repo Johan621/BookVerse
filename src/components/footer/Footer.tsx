@@ -7,15 +7,11 @@ import { Container } from "@/components/common/Container";
 import { Button } from "@/components/ui/Button";
 import {
   BookOpen, Globe, MessageSquare, Share2, 
-  Link as LinkIcon, Mail, ArrowRight 
+  Mail, ArrowRight 
 } from "lucide-react";
 
 export const Footer = () => {
-  const [year, setYear] = React.useState<number | null>(null);
-
-  React.useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const year = new Date().getFullYear();
 
   return (
     <footer className="relative w-full border-t border-white/10 bg-background overflow-hidden z-20">

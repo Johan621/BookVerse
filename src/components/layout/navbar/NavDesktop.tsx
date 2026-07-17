@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-import { Button } from "@/components/ui/Button";
 
+import { Button } from "@/components/ui/Button";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Browse Books", path: "/books" },

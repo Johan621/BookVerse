@@ -34,7 +34,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <motion.button
         ref={ref}
-        whileHover={disabled || isLoading ? undefined : { scale: 1.02, transition: { duration: 0.2, ease: "easeInOut" } as any }}
+        whileHover={disabled || isLoading ? undefined : { scale: 1.02, transition: { duration: 0.2, ease: "easeInOut" } }}
         whileTap={disabled || isLoading ? undefined : { scale: 0.98 }}
         className={cn(baseStyles, variants[variant], sizes[size], className)}
         disabled={disabled || isLoading}

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BookOpen, Edit2, Trash2, MoreVertical } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+
 import Link from "next/link";
 import { toast } from "sonner";
 

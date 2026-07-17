@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useState, useEffect } from "react";
+
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Container } from "@/components/common/Container";
 import { NavLogo } from "./NavLogo";
