@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <!-- Glow/AI Node Gradient -->
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Modern Rounded Squircle Base -->
+  <rect width="512" height="512" rx="120" ry="120" fill="url(#bgGrad)" />
+
+  <!-- Open Book Base -->
+  <path 
+    d="M 256 360 C 256 360 200 320 120 320 L 120 180 C 200 180 240 210 256 240 C 272 210 312 180 392 180 L 392 320 C 312 320 256 360 256 360 Z" 
+    fill="none" 
+    stroke="#ffffff" 
+    stroke-width="32" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+  />
+  
+  <!-- Pages/Lines inside the book -->
+  <path d="M 160 230 L 220 250" stroke="#ffffff" stroke-width="24" stroke-linecap="round" opacity="0.8" />
+  <path d="M 160 270 L 220 280" stroke="#ffffff" stroke-width="24" stroke-linecap="round" opacity="0.5" />
+  <path d="M 352 230 L 292 250" stroke="#ffffff" stroke-width="24" stroke-linecap="round" opacity="0.8" />
+  <path d="M 352 270 L 292 280" stroke="#ffffff" stroke-width="24" stroke-linecap="round" opacity="0.5" />
+
+  <!-- Central AI Spark / Exchange Node -->
+  <circle cx="256" cy="140" r="40" fill="url(#nodeGrad)" filter="url(#glow)" />
+  
+  <!-- Network lines connecting book to AI node -->
+  <path d="M 256 240 L 256 180" stroke="#2dd4bf" stroke-width="16" stroke-linecap="round" stroke-dasharray="10 10" />
+</svg>

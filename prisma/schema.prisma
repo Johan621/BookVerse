@@ -1,0 +1,335 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// =======================
+// Enums
+// =======================
+
+enum Role {
+  USER
+  ADMIN
+  MODERATOR
+}
+
+enum BookCondition {
+  NEW
+  LIKE_NEW
+  GOOD
+  FAIR
+  POOR
+}
+
+enum ExchangeStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  COMPLETED
+  CANCELLED
+}
+
+enum NotificationType {
+  EXCHANGE_REQUEST
+  MESSAGE
+  SYSTEM
+  REVIEW
+}
+
+// =======================
+// Models
+// =======================
+
+model College {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  domain    String?   @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  users       User[]
+  departments Department[]
+}
+
+model Department {
+  id        String    @id @default(uuid())
+  name      String
+  collegeId String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  college College @relation(fields: [collegeId], references: [id])
+  users   User[]
+
+  @@unique([name, collegeId])
+  @@index([collegeId])
+}
+
+model Semester {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  users User[]
+  books Book[]
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  fullName     String
+  bio          String?
+  phone        String?
+  role         Role      @default(USER)
+  isVerified   Boolean   @default(false)
+
+  collegeId    String?
+  departmentId String?
+  semesterId   String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  // Relations
+  college    College?    @relation(fields: [collegeId], references: [id])
+  department Department? @relation(fields: [departmentId], references: [id])
+  semester   Semester?   @relation(fields: [semesterId], references: [id])
+
+  books           Book[]
+  wishlist        Wishlist[]
+  bookmarks       Bookmark[]
+  reviewsGiven    Review[]       @relation("ReviewsGiven")
+  reviewsReceived Review[]       @relation("ReviewsReceived")
+  notifications   Notification[]
+
+  exchangesRequested ExchangeRequest[] @relation("Requester")
+  exchangesReceived  ExchangeRequest[] @relation("Receiver")
+
+  historyInitiated ExchangeHistory[] @relation("HistoryInitiated")
+  historyReceived  ExchangeHistory[] @relation("HistoryReceived")
+
+  conversations1 Conversation[] @relation("User1")
+  conversations2 Conversation[] @relation("User2")
+  messages       Message[]
+
+  @@index([email])
+  @@index([collegeId])
+}
+
+model Category {
+  id          String    @id @default(uuid())
+  name        String    @unique
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+
+  books Book[]
+}
+
+model Book {
+  id          String        @id @default(uuid())
+  title       String
+  author      String
+  isbn        String?
+  description String?
+  condition   BookCondition @default(GOOD)
+  price       Float?
+
+  ownerId    String
+  categoryId String
+  semesterId String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  // Relations
+  owner        User        @relation(fields: [ownerId], references: [id])
+  category     Category    @relation(fields: [categoryId], references: [id])
+  semester     Semester?   @relation(fields: [semesterId], references: [id])
+  images       BookImage[]
+  wishlistedBy Wishlist[]
+  bookmarkedBy Bookmark[]
+
+  exchangeRequestsRequested ExchangeRequest[] @relation("RequestedBook")
+  exchangeRequestsOffered   ExchangeRequest[] @relation("OfferedBook")
+
+  exchangeHistoriesRequested ExchangeHistory[] @relation("HistoryRequestedBook")
+  exchangeHistoriesOffered   ExchangeHistory[] @relation("HistoryOfferedBook")
+
+  @@index([ownerId])
+  @@index([categoryId])
+  @@index([title])
+}
+
+model BookImage {
+  id        String   @id @default(uuid())
+  url       String
+  isPrimary Boolean  @default(false)
+  bookId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@index([bookId])
+}
+
+model Wishlist {
+  id        String   @id @default(uuid())
+  userId    String
+  bookId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, bookId])
+  @@index([userId])
+}
+
+model Bookmark {
+  id        String   @id @default(uuid())
+  userId    String
+  bookId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, bookId])
+  @@index([userId])
+}
+
+model ExchangeRequest {
+  id              String         @id @default(uuid())
+  requesterId     String
+  receiverId      String
+  requestedBookId String
+  offeredBookId   String?
+  status          ExchangeStatus @default(PENDING)
+  message         String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  // Relations
+  requester     User  @relation("Requester", fields: [requesterId], references: [id])
+  receiver      User  @relation("Receiver", fields: [receiverId], references: [id])
+  requestedBook Book  @relation("RequestedBook", fields: [requestedBookId], references: [id])
+  offeredBook   Book? @relation("OfferedBook", fields: [offeredBookId], references: [id])
+
+  @@index([requesterId])
+  @@index([receiverId])
+}
+
+model ExchangeHistory {
+  id              String         @id @default(uuid())
+  initiatedById   String
+  receivedById    String
+  requestedBookId String
+  offeredBookId   String?
+  finalStatus     ExchangeStatus
+  completedAt     DateTime       @default(now())
+
+  // Relations
+  initiatedBy   User  @relation("HistoryInitiated", fields: [initiatedById], references: [id])
+  receivedBy    User  @relation("HistoryReceived", fields: [receivedById], references: [id])
+  requestedBook Book  @relation("HistoryRequestedBook", fields: [requestedBookId], references: [id])
+  offeredBook   Book? @relation("HistoryOfferedBook", fields: [offeredBookId], references: [id])
+
+  @@index([initiatedById])
+  @@index([receivedById])
+}
+
+model Review {
+  id         String    @id @default(uuid())
+  rating     Int
+  comment    String?
+  reviewerId String
+  revieweeId String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  reviewer User @relation("ReviewsGiven", fields: [reviewerId], references: [id])
+  reviewee User @relation("ReviewsReceived", fields: [revieweeId], references: [id])
+
+  @@index([reviewerId])
+  @@index([revieweeId])
+}
+
+model Notification {
+  id      String           @id @default(uuid())
+  userId  String
+  type    NotificationType
+  title   String
+  message String
+  isRead  Boolean          @default(false)
+  link    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Conversation {
+  id        String    @id @default(uuid())
+  user1Id   String
+  user2Id   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  user1    User      @relation("User1", fields: [user1Id], references: [id])
+  user2    User      @relation("User2", fields: [user2Id], references: [id])
+  messages Message[]
+
+  @@unique([user1Id, user2Id])
+  @@index([user1Id])
+  @@index([user2Id])
+}
+
+model Message {
+  id             String    @id @default(uuid())
+  conversationId String
+  senderId       String
+  content        String
+  isRead         Boolean   @default(false)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  deletedAt      DateTime?
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User         @relation(fields: [senderId], references: [id])
+
+  @@index([conversationId])
+  @@index([senderId])
+}
+
+model Admin {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  name         String
+  role         Role      @default(ADMIN)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deletedAt    DateTime?
+}
