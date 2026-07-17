@@ -7,7 +7,7 @@ import {
   TrendingUp,
   Activity
 } from "lucide-react";
-import { StatCard } from "@/components/admin/ui/StatCard";
+import { StatCard } from "@/components/ui/StatCard";
 import { ActivityChart } from "@/components/admin/charts/ActivityChart";
 import { toast } from "sonner";
 

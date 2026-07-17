@@ -8,7 +8,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer } from "@/components/animations/StaggerContainer";
 import { StaggerItem } from "@/components/animations/StaggerItem";
 import { FloatingParticles } from "@/components/background/FloatingParticles";
-import { StatCard } from "./StatCard";
+import { StatCard } from "@/components/ui/StatCard";
 import { BookOpen, IndianRupee, Users, Building2, Repeat, Leaf } from "lucide-react";
 
 const STATS = [
