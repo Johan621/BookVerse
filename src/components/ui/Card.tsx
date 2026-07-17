@@ -38,3 +38,21 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 );
 
 Card.displayName = "Card";
+
+export const CardHeader = ({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn("p-4 border-b", className)} {...props}>
+    {children}
+  </div>
+);
+
+export const CardTitle = ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <h3 className={cn("text-lg font-semibold", className)} {...props}>
+    {children}
+  </h3>
+);
+
+export const CardContent = ({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn("p-4", className)} {...props}>
+    {children}
+  </div>
+);

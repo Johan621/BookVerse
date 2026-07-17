@@ -9,11 +9,12 @@ import { Label } from "@/components/ui/Label";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import { Loader2 } from "lucide-react";
+import { Loader2, Eye, EyeOff } from "lucide-react";
 import { toast } from "sonner";
 
 export const LoginForm = () => {
   const [isLoading, setIsLoading] = React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
 
   const {
     register,
@@ -54,14 +55,22 @@ export const LoginForm = () => {
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2 relative">
         <Label htmlFor="password">Password</Label>
         <Input
           id="password"
-          type="password"
+          type={showPassword ? "text" : "password"}
           placeholder="••••••••"
           {...register("password")}
         />
+        <button
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}
+          className="absolute right-3 top-9 -translate-y-1/2 text-muted-foreground"
+          aria-label="Toggle password visibility"
+        >
+          {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+        </button>
         {errors.password && (
           <p className="text-sm text-red-500 font-medium">{errors.password.message}</p>
         )}

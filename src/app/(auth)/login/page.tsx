@@ -1,13 +1,15 @@
-import { ConstructionPlaceholder } from "@/components/common/ConstructionPlaceholder";
-import { Key } from "lucide-react";
+"use client";
+
+import { AuthLayout } from "@/components/auth/AuthLayout";
+import { LoginForm } from "@/components/auth/LoginForm";
 
 export default function LoginPage() {
   return (
-    <ConstructionPlaceholder
+    <AuthLayout
       title="Login"
-      icon={<Key className="w-12 h-12 text-primary" />}
-      breadcrumbs={[{ label: "Login", href: "/login" }]}
-      description="Sign in to access your BookVerse AI account. This page is under construction and will soon feature a secure authentication flow."
-    />
+      subtitle="Welcome back! Sign in to continue."
+    >
+      <LoginForm />
+    </AuthLayout>
   );
 }
