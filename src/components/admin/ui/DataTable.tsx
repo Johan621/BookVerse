@@ -30,7 +30,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder = "Search..." }:
             type="text"
             placeholder={searchPlaceholder}
             value={searchTerm}
-            onChange={(e) = aria-label="Input field"> setSearchTerm(e.target.value)}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-colors placeholder:text-muted-foreground"
           />
         </div>

@@ -38,7 +38,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend }) => {
             "placeholder:text-muted-foreground"
           )}
           value={text}
-          onChange={(e) = aria-label="Input field"> setText(e.target.value)}
+          onChange={(e) => setText(e.target.value)}
         />
         {/* Emoji button */}
         <button

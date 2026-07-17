@@ -23,7 +23,7 @@ export const ImageUpload: React.FC<ImageUploadProps alt=""> = ({ onSelect }) => 
       <button
         type="button"
         className={cn("p-2 rounded-md hover:bg-white/10 transition-colors")}
-        onClick={() = aria-label="Action button"> inputRef.current?.click()}
+        onClick={() => inputRef.current?.click()}
         aria-label="Upload image"
       >
         {/* Simple camera icon via emoji */}

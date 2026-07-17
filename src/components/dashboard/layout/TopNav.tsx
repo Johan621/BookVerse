@@ -37,7 +37,7 @@ export const TopNav = () => {
             variant="outline" 
             size="sm" 
             className="hidden sm:flex border-primary/30 text-primary hover:bg-primary/10 gap-2 font-bold"
-            onClick={() = aria-label="Action button"> setIsAiSearchOpen(true)}
+            onClick={() => setIsAiSearchOpen(true)}
           >
             <Sparkles className="w-4 h-4" /> AI Search
           </Button>
