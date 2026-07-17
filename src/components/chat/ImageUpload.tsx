@@ -8,7 +8,7 @@ interface ImageUploadProps {
   onSelect: (file: File) => void
 }
 
-export const ImageUpload: React.FC<ImageUploadProps alt=""> = ({ onSelect }) => {
+export const ImageUpload: React.FC<ImageUploadProps> = ({ onSelect }) => {
   const inputRef = React.useRef<HTMLInputElement>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

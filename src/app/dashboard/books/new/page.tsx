@@ -11,10 +11,7 @@ import { Label } from "@/components/ui/Label";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
-export const metadata = {
-  title: "Upload Book – BookVerse",
-  description: "Add a new book to your collection with images, details, and AI helpers.",
-};
+
 
 export default function UploadBookPage() {
   const router = useRouter();
