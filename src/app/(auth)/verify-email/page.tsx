@@ -1,14 +1,10 @@
+"use client";
+
 import { AuthLayout } from "@/components/auth/AuthLayout";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { MailCheck } from "lucide-react";
-import { Metadata } from "next";
 import { toast } from "sonner";
-
-export const metadata: Metadata = {
-  title: "Verify Email - BookVerse AI",
-  description: "Verify your email address to access BookVerse AI.",
-};
 
 export default function VerifyEmailPage() {
   return (
