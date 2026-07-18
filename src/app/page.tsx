@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Hero } from "@/components/hero/Hero";
 import { SmartSearchSection } from "@/components/search/SmartSearchSection";
 import { CategoryGrid } from "@/components/books/categories/CategoryGrid";
@@ -12,6 +13,14 @@ import { TestimonialsSection } from "@/components/testimonials/TestimonialsSecti
 import { FaqSection } from "@/components/faq/FaqSection";
 import { CtaSection } from "@/components/cta/CtaSection";
 import { AboutSection } from "@/components/about/AboutSection";
+
+export const metadata: Metadata = {
+  title: "BookVerse AI | The Future of Student Book Exchange",
+  description: "Join the largest AI-powered student book exchange. Discover, buy, and trade textbooks safely.",
+  alternates: {
+    canonical: "/",
+  }
+};
 
 export default function Home() {
   return (

@@ -1,198 +1,66 @@
-"use client";
+import { Metadata } from "next";
+import BookDetailsClient, { mockBooks } from "./BookDetailsClient";
 
-import * as React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
-import { BookCard } from "@/components/dashboard/books/BookCard";
-import { Heart, Bookmark, MessageSquare, ArrowRight } from "lucide-react";
-
-// Mock data for demonstration
-const mockBooks = {
-  "1": {
-    id: "1",
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    description:
-      "A classic novel about the American Dream, love, and tragedy set in the Roaring Twenties.",
-    coverUrl: "/images/gatsby-cover.jpg",
-    images: [
-      "/images/gatsby-1.jpg",
-      "/images/gatsby-2.jpg",
-      "/images/gatsby-3.jpg",
-    ],
-    owner: {
-      name: "Alice Johnson",
-      avatarUrl: "/images/avatar-alice.png",
-    },
-    reviews: [
-      { user: "Bob", rating: 5, comment: "A timeless masterpiece!" },
-      { user: "Cara", rating: 4, comment: "Beautiful writing, love the characters." },
-    ],
-    related: [
-      {
-        id: "2",
-        title: "To Kill a Mockingbird",
-        author: "Harper Lee",
-        status: "PUBLISHED",
-        views: 1520,
-        condition: "Good",
-      },
-      {
-        id: "3",
-        title: "1984",
-        author: "George Orwell",
-        status: "PUBLISHED",
-        views: 980,
-        condition: "Very Good",
-      },
-    ],
-  },
-};
-
-type Review = {
-  user: string;
-  rating: number;
-  comment: string;
-};
-
-export default function BookDetailsPage({ params }: { params: { id: string } }) {
-  const router = useRouter();
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const { id } = params;
   const book = mockBooks[id as keyof typeof mockBooks];
 
-  const [isWishlisted, setWishlisted] = React.useState(false);
-  const [isBookmarked, setBookmarked] = React.useState(false);
-
   if (!book) {
-    return (
-      <div className="flex items-center justify-center min-min-h-screen">
-        <p className="text-muted-foreground">Book not found.</p>
-        <Button className="ml-4" onClick={() => router.back()}>
-          Go Back
-        </Button>
-      </div>
-    );
+    return {
+      title: "Book Not Found",
+    };
   }
-  return (
-    <motion.div
-      className="container mx-auto p-6"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      {/* Main Details */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Gallery */}
-        <div className="space-y-4">
-          <Image
-            src={book.coverUrl}
-            alt={book.title}
-            width={400}
-            height={600}
-            className="rounded-xl object-cover w-full h-auto shadow-lg"
-          />
-          <div className="grid grid-cols-3 gap-2">
-            {book.images.map((src: string, idx: number) => (
-              <Image
-                key={idx}
-                src={src}
-                alt={`${book.title} image ${idx + 1}`}
-                width={120}
-                height={180}
-                className="rounded-lg object-cover"
-              />
-            ))}
-          </div>
-        </div>
 
-        {/* Info and Actions */}
-        <div className="flex flex-col space-y-6">
-          <h1 className="text-4xl font-bold text-foreground">
-            {book.title}
-          </h1>
-          <p className="text-xl text-muted-foreground">by {book.author}</p>
-          <p className="text-foreground/80">{book.description}</p>
-
-          {/* Owner Card */}
-          <div className="flex items-center gap-4 p-4 bg-background/30 rounded-xl glass-heavy">
-            <Image
-              src={book.owner.avatarUrl}
-              alt={book.owner.name}
-              width={48}
-              height={48}
-              className="rounded-full"
-            />
-            <div>
-              <p className="font-medium text-foreground">{book.owner.name}</p>
-              <p className="text-sm text-muted-foreground">Owner</p>
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-3">
-            <Button
-              variant="primary"
-              className="flex items-center gap-2"
-              onClick={() => alert("Exchange flow (mock) triggered")}
-            >
-              <ArrowRight className="w-4 h-4" /> Exchange
-            </Button>
-            <Button
-              variant="outline"
-              className="flex items-center gap-2"
-              onClick={() => alert("Chat flow (mock) triggered")}
-            >
-              <MessageSquare className="w-4 h-4" /> Chat
-            </Button>
-            <Button
-              variant={isWishlisted ? "secondary" : "ghost"}
-              className="flex items-center gap-2"
-              onClick={() => setWishlisted(!isWishlisted)}
-            >
-              <Heart className={`w-4 h-4 ${isWishlisted ? "text-primary" : ""}`} />
-              {isWishlisted ? "Wishlisted" : "Add to Wishlist"}
-            </Button>
-            <Button
-              variant={isBookmarked ? "secondary" : "ghost"}
-              className="flex items-center gap-2"
-              onClick={() => setBookmarked(!isBookmarked)}
-            >
-              <Bookmark className={`w-4 h-4 ${isBookmarked ? "text-primary" : ""}`} />
-              {isBookmarked ? "Bookmarked" : "Bookmark"}
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Reviews Section */}
-      <section className="mt-12">
-        <h2 className="text-2xl font-semibold mb-4 text-foreground">Reviews</h2>
-        <div className="space-y-4">
-          {book.reviews.map((rev: Review, i: number) => (
-            <div key={i} className="p-4 bg-background/30 rounded-lg glass-heavy">
-              <p className="font-medium text-foreground">{rev.user}</p>
-              <p className="text-sm text-muted-foreground">Rating: {rev.rating}/5</p>
-              <p className="mt-2 text-foreground/80">{rev.comment}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Related Books */}
-      <section className="mt-12">
-        <h2 className="text-2xl font-semibold mb-4 text-foreground">Related Books</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {book.related.map((rel: typeof book.related[0]) => (
-            <Link key={rel.id} href={`/books/${rel.id}`}>
-              <BookCard {...rel} />
-            </Link>
-          ))}
-        </div>
-      </section>
-    </motion.div>
-  );
+  return {
+    title: book.title,
+    description: book.description,
+    authors: [{ name: book.author }],
+    openGraph: {
+      title: book.title,
+      description: book.description,
+      images: [
+        {
+          url: book.coverUrl,
+          width: 800,
+          height: 1200,
+          alt: book.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: book.title,
+      description: book.description,
+      images: [book.coverUrl],
+    },
+  };
 }
 
+export default function BookDetailsPage({ params }: { params: { id: string } }) {
+  const book = mockBooks[params.id as keyof typeof mockBooks];
+  
+  // JSON-LD structured data for the book
+  const jsonLd = book ? {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: book.title,
+    author: {
+      "@type": "Person",
+      name: book.author,
+    },
+    image: `https://bookverse.ai${book.coverUrl}`,
+    description: book.description,
+  } : null;
+
+  return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <BookDetailsClient params={params} />
+    </>
+  );
+}

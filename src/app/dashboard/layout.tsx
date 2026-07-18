@@ -5,6 +5,10 @@ import { AnimatedAurora } from "@/components/background/AnimatedAurora";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title: "Dashboard - BookVerse AI",
   description: "Manage your book exchanges, wishlist, and profile.",
 };

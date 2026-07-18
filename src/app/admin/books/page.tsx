@@ -23,11 +23,11 @@ export default function ManageBooksPage() {
           <div className="w-12 h-16 bg-white/5 border border-white/10 rounded overflow-hidden flex items-center justify-center relative">
             {/* Placeholder for book cover */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-indigo-500/20" />
-            <span className="text-[10px] font-bold text-white/30 tracking-widest rotate-90 whitespace-nowrap uppercase">{book.author.split(' ').pop()}</span>
+            <span className="text-[10px] font-bold text-white/30 tracking-widest rotate-90 whitespace-nowrap uppercase">{item.author.split(' ').pop()}</span>
           </div>
           <div>
             <p className="font-medium text-foreground">{book.title}</p>
-            <p className="text-xs text-muted-foreground">{book.author}</p>
+            <p className="text-xs text-muted-foreground">{item.author}</p>
           </div>
         </div>
       )

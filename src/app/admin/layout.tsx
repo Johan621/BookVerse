@@ -1,6 +1,14 @@
+import { Metadata } from "next";
 import { AdminSidebar } from "@/components/admin/layout/AdminSidebar";
 import { AdminTopNav } from "@/components/admin/layout/AdminTopNav";
 import { AnimatedAurora } from "@/components/background/AnimatedAurora";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function AdminLayout({
   children,
