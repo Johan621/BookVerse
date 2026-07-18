@@ -11,7 +11,7 @@ import {
 } from "recharts";
 
 interface ActivityChartProps {
-  data: any[];
+  data: Record<string, unknown>[];
 }
 
 export function ActivityChart({ data }: ActivityChartProps) {

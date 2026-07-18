@@ -10,7 +10,7 @@ export default function VerifyEmailPage() {
   return (
     <AuthLayout
       title="Verify your email"
-      subtitle="We've sent a verification link to your email address. Please verify to continue."
+      subtitle="We&apos;ve sent a verification link to your email address. Please verify to continue."
       quote="“The platform's security features make me feel completely safe when exchanging books with other students.”"
       quoteAuthor="Priya K., Senior Year"
     >
@@ -20,7 +20,7 @@ export default function VerifyEmailPage() {
         </div>
         
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Didn't receive the email? Check your spam folder or click below to resend.
+          Didn&apos;t receive the email? Check your spam folder or click below to resend.
         </p>
 
         <div className="flex flex-col gap-4 pt-4">

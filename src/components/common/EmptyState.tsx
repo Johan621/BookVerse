@@ -1,10 +1,8 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { slideUp } from "@/components/animations/variants";
 
-import { HTMLMotionProps } from "framer-motion";
 import type { EmptyStateProps } from "@/types/common";
 
 export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(

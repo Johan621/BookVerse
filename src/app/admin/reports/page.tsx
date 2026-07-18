@@ -16,7 +16,7 @@ export default function ReportsPage() {
   const columns = [
     {
       header: "Report Info",
-      cell: (item: any) => (
+      cell: (_item: Record<string, unknown>) => (
         <div className="flex items-start gap-3">
           <div className="mt-1 p-2 bg-red-500/10 rounded-lg text-red-400">
             <Flag className="w-4 h-4" />
@@ -34,13 +34,13 @@ export default function ReportsPage() {
     },
     {
       header: "Target User / Item",
-      cell: (item: any) => (
+      cell: (_item: Record<string, unknown>) => (
         <span className="text-purple-400 font-medium">{item.targetUser}</span>
       )
     },
     {
       header: "Status",
-      cell: (item: any) => (
+      cell: (_item: Record<string, unknown>) => (
         <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${
           item.status === 'Open' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
           item.status === 'In Progress' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
@@ -56,7 +56,7 @@ export default function ReportsPage() {
     },
     {
       header: "Actions",
-      cell: (item: any) => (
+      cell: (_item: Record<string, unknown>) => (
         <div className="flex items-center gap-2">
           <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-medium text-foreground">
             <Eye className="w-4 h-4" />
@@ -80,7 +80,8 @@ export default function ReportsPage() {
         </div>
       </div>
 
-      <DataTable data={reportsData} columns={columns as any} searchPlaceholder="Search reports by user or target..." />
+      <DataTable data={reportsData} // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      columns={columns as any} searchPlaceholder="Search reports by user or target..." />
     </div>
   );
 }

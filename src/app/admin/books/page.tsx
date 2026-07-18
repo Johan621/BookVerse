@@ -2,7 +2,6 @@
 
 import { DataTable } from "@/components/admin/ui/DataTable";
 import { MoreHorizontal, Edit, Trash2 } from "lucide-react";
-import Image from "next/image";
 import { toast } from "sonner";
 
 // Mock Data
@@ -19,7 +18,7 @@ export default function ManageBooksPage() {
   const columns = [
     {
       header: "Book",
-      cell: (book: any) => (
+      cell: (book: typeof books[0]) => (
         <div className="flex items-center gap-4">
           <div className="w-12 h-16 bg-white/5 border border-white/10 rounded overflow-hidden flex items-center justify-center relative">
             {/* Placeholder for book cover */}
@@ -43,7 +42,7 @@ export default function ManageBooksPage() {
     },
     {
       header: "Status",
-      cell: (book: any) => (
+      cell: (book: typeof books[0]) => (
         <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${
           book.status === 'Available' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
           book.status === 'Flagged' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
@@ -59,7 +58,7 @@ export default function ManageBooksPage() {
     },
     {
       header: "Actions",
-      cell: (book: any) => (
+      cell: (book: typeof books[0]) => (
         <div className="flex items-center gap-2">
           <button onClick={() => toast.info("Coming soon!")} className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-blue-400 transition-colors" title="Edit Book">
             <Edit className="w-4 h-4" />
@@ -84,7 +83,8 @@ export default function ManageBooksPage() {
         </div>
       </div>
 
-      <DataTable data={books} columns={columns as any} searchPlaceholder="Search books by title, author, or ID..." />
+      <DataTable data={books} // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      columns={columns as any} searchPlaceholder="Search books by title, author, or ID..." />
     </div>
   );
 }

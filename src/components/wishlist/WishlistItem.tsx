@@ -71,3 +71,5 @@ export const WishlistItem: React.FC<Props> = React.memo(({ book, onRemove, onMov
     </motion.div>
   );
 });
+
+WishlistItem.displayName = "WishlistItem";

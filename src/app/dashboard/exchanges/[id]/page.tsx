@@ -40,7 +40,7 @@ const MOCK_EXCHANGE = {
   }
 };
 
-export default function ExchangeDetailsPage({ params }: { params: { id: string } }) {
+export default function ExchangeDetailsPage({ }: { params: { id: string } }) {
   const [status, setStatus] = React.useState<ExchangeStatus>(MOCK_EXCHANGE.status);
 
   const handleAction = (action: "ACCEPT" | "REJECT" | "CANCEL" | "COMPLETE") => {

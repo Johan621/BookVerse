@@ -185,7 +185,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
       <section className="mt-12">
         <h2 className="text-2xl font-semibold mb-4 text-foreground">Related Books</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {book.related.map((rel: any) => (
+          {book.related.map((rel: Record<string, unknown>) => (
             <Link key={rel.id} href={`/books/${rel.id}`}>
               <BookCard {...rel} />
             </Link>

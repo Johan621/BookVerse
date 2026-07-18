@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Search, Filter } from "lucide-react";
 import { toast } from "sonner";
 
-interface Column<T> {
+export interface Column<T> {
   header: string;
   accessorKey?: keyof T;
   cell?: (item: T) => React.ReactNode;
@@ -85,7 +85,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder = "Search..." }:
                 </tr>
               )}
             </tbody>
-          </table></div>
+          </table>
         </div>
       </div>
       

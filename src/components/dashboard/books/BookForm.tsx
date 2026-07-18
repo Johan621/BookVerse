@@ -48,7 +48,7 @@ export const BookForm = ({ initialData, isEditing = false }: BookFormProps) => {
    
   const watchCondition = watch("condition");
 
-  const onSubmit = async (_data: BookValues) => {
+  const onSubmit = async (/* undefined: */ BookValues) => {
     setIsLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsLoading(false);

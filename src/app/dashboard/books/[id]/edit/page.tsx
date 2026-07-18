@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Edit your book listing.",
 };
 
-export default function EditBookPage({ params }: { params: { id: string } }) {
+export default function EditBookPage({ }: { params: { id: string } }) {
   // In a real app, fetch book data based on params.id
   // Mock data for demonstration:
   const mockInitialData = {
