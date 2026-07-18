@@ -59,7 +59,7 @@ export const ExchangeWorkflow = () => {
   return (
     <Section className="">
       <Container>
-        <FadeIn className="text-center mb-20">
+        <FadeIn className="text-center mb-16">
           <SectionHeading>How It Works</SectionHeading>
           <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
             A simple, secure four-step process to get the resources you need.

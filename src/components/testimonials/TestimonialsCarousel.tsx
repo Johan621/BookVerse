@@ -86,7 +86,7 @@ export const TestimonialsCarousel = () => {
   const carouselItems = [...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
-    <div className="relative w-full overflow-hidden py-10" ref={containerRef}>
+    <div className="relative w-full overflow-hidden py-12" ref={containerRef}>
       
       {/* Gradient Fades for edges */}
       <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />

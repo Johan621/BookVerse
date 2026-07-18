@@ -59,7 +59,7 @@ export const BookScanner = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6"
+        className="glass rounded-2xl p-6"
       >
         {/* Upload Section */}
         <div

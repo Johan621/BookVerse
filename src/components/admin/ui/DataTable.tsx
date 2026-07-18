@@ -44,7 +44,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder = "Search..." }:
       </div>
 
       {/* Table Content */}
-      <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl">
+      <div className="glass rounded-2xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm whitespace-nowrap">
             <thead className="bg-black/20 border-b border-white/10">

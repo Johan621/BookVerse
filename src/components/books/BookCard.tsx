@@ -75,7 +75,7 @@ export const BookCard = React.memo(({ book }: { book: BookProps }) => {
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-1 flex-col p-5">
+        <div className="flex flex-1 flex-col p-6">
           <div className="mb-1 flex items-start justify-between gap-2">
             <h3 className="font-bold text-lg leading-tight line-clamp-2 text-foreground group-hover:text-primary transition-colors">
               {book.title}
@@ -115,3 +115,5 @@ export const BookCard = React.memo(({ book }: { book: BookProps }) => {
     </motion.div>
   );
 });
+
+BookCard.displayName = "BookCard";

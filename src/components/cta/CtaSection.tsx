@@ -48,7 +48,7 @@ export const CtaSection = () => {
         {/* Core Content Box */}
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="p-[1px] rounded-3xl bg-gradient-to-b from-white/20 to-white/5 shadow-2xl overflow-hidden">
-            <div className="rounded-[23px] bg-background/40 backdrop-blur-2xl p-10 md:p-16 flex flex-col items-center text-center">
+            <div className="rounded-[23px] bg-background/40 backdrop-blur-2xl p-8 md:p-16 flex flex-col items-center text-center">
               
               <FadeIn>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-bold mb-8 border border-white/20 shadow-inner">
@@ -67,7 +67,7 @@ export const CtaSection = () => {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
+                <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-8">
                   Stop overpaying for textbooks. Start sharing, learning, and saving with the smartest community on campus.
                 </p>
               </FadeIn>

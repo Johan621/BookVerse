@@ -45,7 +45,7 @@ export const BookForm = ({ initialData, isEditing = false }: BookFormProps) => {
 
   // eslint-disable-next-line react-hooks/incompatible-library
   const watchTitle = watch("title");
-  // eslint-disable-next-line react-hooks/incompatible-library
+   
   const watchCondition = watch("condition");
 
   const onSubmit = async (_data: BookValues) => {

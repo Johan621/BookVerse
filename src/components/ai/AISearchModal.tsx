@@ -32,9 +32,9 @@ export const AISearchModal = ({ isOpen, onClose }: AISearchModalProps) => {
     if (!isOpen) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setQuery("");
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+       
       setResults(null);
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+       
       setIsSearching(false);
     }
   }, [isOpen]);
@@ -67,7 +67,7 @@ export const AISearchModal = ({ isOpen, onClose }: AISearchModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 sm:px-0">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 sm:px-0">
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" onClick={onClose} />
       
       <div className="relative w-full max-w-2xl bg-background border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">

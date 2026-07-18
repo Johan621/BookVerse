@@ -51,3 +51,5 @@ export const MessageItem: React.FC<{ message: Message }> = React.memo(({ message
     </div>
   );
 });
+
+MessageItem.displayName = "MessageItem";

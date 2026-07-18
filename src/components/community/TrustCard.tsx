@@ -31,7 +31,7 @@ export const TrustCard = ({ title, description, icon: Icon, value, stringValue, 
       
       <Card 
         variant="glass" 
-        className="relative overflow-hidden flex flex-col p-6 h-full border border-white/10 bg-white/5 backdrop-blur-md transition-colors duration-300 group-hover:bg-white/10"
+        className="glass relative overflow-hidden flex flex-col p-6 h-full transition-colors duration-300 group-hover:bg-white/10"
       >
         <div className="flex items-start justify-between mb-4">
           <div className={`flex items-center justify-center h-12 w-12 rounded-xl bg-background border border-white/10 shadow-inner group-hover:scale-110 transition-transform ${colorClass.replace('bg-', 'text-')}`}>

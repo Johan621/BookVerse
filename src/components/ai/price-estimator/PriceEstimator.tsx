@@ -33,7 +33,7 @@ export const PriceEstimator = () => {
     <div className="w-full max-w-4xl mx-auto py-8">
       
       {/* Header */}
-      <FadeIn className="text-center mb-10">
+      <FadeIn className="text-center mb-8">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 text-primary mb-6 shadow-lg border border-primary/30 relative">
           <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full" />
           <Calculator className="w-8 h-8 relative z-10" />

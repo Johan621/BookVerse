@@ -26,7 +26,7 @@ export const AnalysisPanel = ({ seoScore, qualityScore, grammarIssues, missingIn
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
         {/* Missing Info */}
-        <FadeIn delay={0.1} className="p-5 glass rounded-2xl border border-white/10 h-full">
+        <FadeIn delay={0.1} className="p-6 glass rounded-2xl border border-white/10 h-full">
           <h4 className="font-bold text-sm text-foreground mb-3 flex items-center gap-2">
             <AlertCircle className="w-4 h-4 text-yellow-500" />
             Missing Information
@@ -48,7 +48,7 @@ export const AnalysisPanel = ({ seoScore, qualityScore, grammarIssues, missingIn
         </FadeIn>
 
         {/* Grammar Issues */}
-        <FadeIn delay={0.2} className="p-5 glass rounded-2xl border border-white/10 h-full">
+        <FadeIn delay={0.2} className="p-6 glass rounded-2xl border border-white/10 h-full">
           <h4 className="font-bold text-sm text-foreground mb-3 flex items-center gap-2">
             <AlertCircle className="w-4 h-4 text-red-400" />
             Grammar & Tone

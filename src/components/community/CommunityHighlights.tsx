@@ -13,7 +13,7 @@ export const CommunityHighlights = () => {
       
       {/* Exchange Success Story */}
       <SlideUp delay={0.1} className="lg:col-span-2">
-        <Card variant="glass" className="h-full flex flex-col justify-center p-8 border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors">
+        <Card variant="glass" className="glass h-full flex flex-col justify-center p-8 border-white/10 hover:bg-white/10 transition-colors">
           <Quote className="h-10 w-10 text-primary mb-4 opacity-50" />
           <h3 className="text-xl font-bold text-foreground leading-relaxed mb-6">
             &quot;I managed to get all my 3rd-semester CS textbooks for half the price. Meeting someone from the senior batch was incredibly helpful for exam tips too!&quot;
@@ -32,7 +32,7 @@ export const CommunityHighlights = () => {
 
       {/* Trending Departments */}
       <SlideUp delay={0.2}>
-        <Card variant="glass" className="h-full p-6 border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors">
+        <Card variant="glass" className="glass h-full p-6 border-white/10 hover:bg-white/10 transition-colors">
           <div className="flex items-center gap-2 mb-6">
             <TrendingUp className="h-5 w-5 text-emerald-400" />
             <h3 className="font-bold text-foreground">Trending Departments</h3>
@@ -55,7 +55,7 @@ export const CommunityHighlights = () => {
 
       {/* Most Exchanged Books */}
       <SlideUp delay={0.3} className="lg:col-span-2">
-        <Card variant="glass" className="h-full p-6 border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors">
+        <Card variant="glass" className="glass h-full p-6 border-white/10 hover:bg-white/10 transition-colors">
           <div className="flex items-center gap-2 mb-6">
             <BookMarked className="h-5 w-5 text-blue-400" />
             <h3 className="font-bold text-foreground">Most Exchanged Books This Week</h3>
@@ -78,7 +78,7 @@ export const CommunityHighlights = () => {
 
       {/* Recently Joined Colleges */}
       <SlideUp delay={0.4}>
-        <Card variant="glass" className="h-full p-6 border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors">
+        <Card variant="glass" className="glass h-full p-6 border-white/10 hover:bg-white/10 transition-colors">
           <div className="flex items-center gap-2 mb-6">
             <Building className="h-5 w-5 text-purple-400" />
             <h3 className="font-bold text-foreground">Recently Joined</h3>

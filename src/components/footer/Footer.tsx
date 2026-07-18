@@ -39,7 +39,7 @@ export const Footer = () => {
           {/* Brand & Newsletter Column */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-2 group w-fit">
-              <div className="p-2 rounded-xl bg-gradient-to-br from-primary to-blue-500 text-white shadow-lg group-hover:scale-105 transition-transform">
+              <div className="p-2 rounded-xl bg-gradient-to-br from-primary to-blue-500 text-white shadow-lg group-hover:scale-[1.02] transition-transform">
                 <BookOpen className="h-6 w-6" />
               </div>
               <span className="font-bold text-xl tracking-tight text-foreground">

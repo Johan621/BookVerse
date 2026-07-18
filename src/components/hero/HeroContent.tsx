@@ -20,7 +20,7 @@ const stats = [
 
 export const HeroContent = () => {
   return (
-    <div className="flex flex-col justify-center gap-8 py-12 md:py-20 lg:py-0">
+    <div className="flex flex-col justify-center gap-8 py-12 md:py-24 lg:py-0">
       
       {/* Headlines */}
       <div className="space-y-4">
@@ -42,7 +42,7 @@ export const HeroContent = () => {
       {/* CTAs */}
       <SlideUp delay={0.8} className="flex flex-wrap items-center gap-4">
         <MagneticButton className="bg-transparent border-none p-0 focus:outline-none">
-          <Button onClick={() => toast.info("Coming soon!")} size="lg" variant="primary" className="h-12 px-8 text-base shadow-lg shadow-primary/20">
+          <Button onClick={() => toast.info("Coming soon!")} size="lg" variant="primary" className="h-12 px-8 text-base font-bold shadow-[0_0_24px_rgba(255,255,255,0.2)] hover:shadow-[0_0_32px_rgba(255,255,255,0.3)] transition-shadow">
             Explore Books
           </Button>
         </MagneticButton>

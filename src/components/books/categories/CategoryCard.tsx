@@ -75,7 +75,6 @@ export const CategoryCard = ({ title, icon: Icon, count, colorClass }: CategoryC
         
         <div className="flex flex-col items-center text-center">
           <h3 className="font-bold text-foreground tracking-tight">{title}</h3>
-          <span className='text-xs text-muted-foreground'>BookVerse AI isn&apos;t just an exchange platform. It&apos;s a rapidly expanding network of students dedicated to sharing knowledge and making education more affordable.</span>
           <p className="text-sm text-muted-foreground mt-1 tabular-nums transition-colors duration-300 group-hover:text-foreground">
             {new Intl.NumberFormat("en-IN").format(isHovered ? displayCount : count)}+ Books
           </p>

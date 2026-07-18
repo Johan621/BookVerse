@@ -54,7 +54,7 @@ export const AIRecommendation = () => {
               <SectionHeading className="mb-6">
                 AI Powered Book Discovery
               </SectionHeading>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 Our recommendation engine helps students find books based on semester, branch, interests, previous searches and community trends.
               </p>
             </FadeIn>

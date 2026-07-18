@@ -15,7 +15,7 @@ export const SmartSearchSection = () => {
     <Section className="-mt-12 lg:-mt-24 pb-24">
       <Container>
         <div className="flex flex-col items-center w-full">
-          <FadeIn className="text-center mb-10">
+          <FadeIn className="text-center mb-8">
             <SectionHeading>Discover Books Instantly</SectionHeading>
             <p className="mt-4 text-muted-foreground text-lg">Use AI to search by syllabus, topic, or specific course requirements.</p>
           </FadeIn>
