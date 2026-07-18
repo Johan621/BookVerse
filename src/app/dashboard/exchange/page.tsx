@@ -110,7 +110,7 @@ export default function ExchangePage() {
               </p>
               {/* Timeline */}
               <div className="border-t border-white/10 pt-2 mt-2">
-                {req.timeline.map((ev, idx) => (
+                {req.timeline?.map((ev, idx) => (
                   <div key={idx} className="flex items-center mb-1">
                     <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
                     <span className="text-xs text-muted-foreground">{ev.date}: {ev.description}</span>
