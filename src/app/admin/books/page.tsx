@@ -26,7 +26,7 @@ export default function ManageBooksPage() {
             <span className="text-[10px] font-bold text-white/30 tracking-widest rotate-90 whitespace-nowrap uppercase">{item.author.split(' ').pop()}</span>
           </div>
           <div>
-            <p className="font-medium text-foreground">{book.title}</p>
+            <p className="font-medium text-foreground">{item.title}</p>
             <p className="text-xs text-muted-foreground">{item.author}</p>
           </div>
         </div>
@@ -44,11 +44,11 @@ export default function ManageBooksPage() {
       header: "Status",
       cell: (item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
         <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${
-          book.status === 'Available' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
-          book.status === 'Flagged' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
+          item.status === 'Available' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
+          item.status === 'Flagged' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
           'bg-white/5 text-muted-foreground border-white/10'
         }`}>
-          {book.status}
+          {item.status}
         </span>
       )
     },
