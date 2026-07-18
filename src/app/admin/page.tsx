@@ -8,7 +8,11 @@ import {
   Activity
 } from "lucide-react";
 import { StatCard } from "@/components/ui/StatCard";
-import { ActivityChart } from "@/components/admin/charts/ActivityChart";
+import dynamic from "next/dynamic";
+const ActivityChart = dynamic(
+  () => import("@/components/admin/charts/ActivityChart").then(mod => mod.ActivityChart),
+  { ssr: false, loading: () => <div className="h-64 w-full animate-pulse bg-white/5 rounded-xl" /> }
+);
 import { toast } from "sonner";
 
 // Mock Data
@@ -43,7 +47,7 @@ export default function AdminOverview() {
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground">Dashboard Overview</h1>
-        <p className="text-muted-foreground mt-2">Welcome back. Here's what's happening on BookVerse today.</p>
+        <p className="text-muted-foreground mt-2">Welcome back. Here&apos;s what&apos;s happening on BookVerse today.</p>
       </div>
 
       {/* Stats Grid */}

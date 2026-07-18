@@ -53,7 +53,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend }) => {
           😊
         </button>
         {/* Image upload button */}
-        <ImageUpload onSelect={(file) = alt=""> console.log("image selected", file)} />
+        <ImageUpload onSelect={(file) => console.log("image selected", file)} />
         {showEmoji && (
           <EmojiPicker onSelect={handleEmojiSelect} onClose={() => setShowEmoji(false)} />
         )}

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BookCard, type BookStatus } from "@/components/dashboard/books/BookCard";
-import { ListSkeleton } from "@/components/dashboard/widgets/Skeletons";
 import { EmptyState } from "@/components/dashboard/widgets/EmptyStates";
 import { BookOpen } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -18,7 +17,7 @@ const MOCK_BOOKS = [
     author: "Thomas H. Cormen",
     status: "PUBLISHED" as BookStatus,
     views: 124,
-    condition: "Good",
+    condition: &quot;Good&quot;,
   },
   {
     id: "b2",
@@ -34,7 +33,7 @@ const MOCK_BOOKS = [
     author: "Abraham Silberschatz",
     status: "DRAFT" as BookStatus,
     views: 0,
-    condition: "Like New",
+    condition: &quot;Like New&quot;,
   },
   {
     id: "b4",

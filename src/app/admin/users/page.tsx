@@ -1,8 +1,7 @@
 "use client";
 
 import { DataTable } from "@/components/admin/ui/DataTable";
-import { Badge } from "@/components/ui/Badge";
-import { MoreHorizontal, Shield, Ban, Mail } from "lucide-react";
+import { MoreHorizontal, Ban, Mail } from "lucide-react";
 import { toast } from "sonner";
 
 // Mock Data

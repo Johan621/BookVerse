@@ -1,8 +1,8 @@
 // src/components/chat/MessageItem.tsx
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface Message {
@@ -14,7 +14,7 @@ interface Message {
   imageUrl?: string;
 }
 
-export const MessageItem: React.FC<{ message: Message }> = ({ message }) => {
+export const MessageItem: React.FC<{ message: Message }> = React.memo(({ message }) => {
   const isMe = message.from === "me";
   return (
     <div className={cn(
@@ -30,7 +30,9 @@ export const MessageItem: React.FC<{ message: Message }> = ({ message }) => {
         )}
       >
         {message.imageUrl && (
-          <img src={message.imageUrl} alt="attachment" className="mb-2 max-h-40 rounded" />
+          <div className="relative mb-2 w-full max-w-sm h-40 rounded overflow-hidden">
+            <Image src={message.imageUrl} alt="attachment" fill sizes="(max-width: 768px) 100vw, 384px" className="object-cover" />
+          </div>
         )}
         <p className="break-words">{message.content}</p>
         <div className="flex items-center justify-between mt-1 text-xs text-muted-foreground">
@@ -48,4 +50,4 @@ export const MessageItem: React.FC<{ message: Message }> = ({ message }) => {
       </div>
     </div>
   );
-};
+});

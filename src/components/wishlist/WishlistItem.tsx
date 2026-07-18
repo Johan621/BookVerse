@@ -1,8 +1,8 @@
 // src/components/wishlist/WishlistItem.tsx
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { FaTrashAlt, FaExchangeAlt, FaShareAlt } from "react-icons/fa";
@@ -22,7 +22,7 @@ interface Props {
   onShare: (id: string) => void;
 }
 
-export const WishlistItem: React.FC<Props> = ({ book, onRemove, onMove, onShare }) => {
+export const WishlistItem: React.FC<Props> = React.memo(({ book, onRemove, onMove, onShare }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -33,7 +33,9 @@ export const WishlistItem: React.FC<Props> = ({ book, onRemove, onMove, onShare 
     >
       <div className="flex items-center gap-4">
         {book.coverImage ? (
-          <img src={book.coverImage} alt={book.title} className="w-16 h-20 object-cover rounded" />
+          <div className="relative w-16 h-20 overflow-hidden rounded">
+            <Image src={book.coverImage} alt={book.title} fill sizes="64px" className="object-cover" />
+          </div>
         ) : (
           <div className="w-16 h-20 bg-muted rounded" />
         )}
@@ -68,4 +70,4 @@ export const WishlistItem: React.FC<Props> = ({ book, onRemove, onMove, onShare 
       </div>
     </motion.div>
   );
-};
+});

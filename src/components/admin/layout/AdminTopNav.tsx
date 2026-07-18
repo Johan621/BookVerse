@@ -4,7 +4,6 @@ import * as React from "react";
 import { Search, Bell, Menu, Shield } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/common/Container";
 import { toast } from "sonner";
 
 export const AdminTopNav = () => {

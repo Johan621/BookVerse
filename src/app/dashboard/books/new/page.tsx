@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { MagneticButton } from "@/components/animations/MagneticButton";
 
 
 

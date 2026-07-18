@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Bookmark, Heart, Star, CheckCircle2, Eye } from "lucide-react";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-// import { Floating } from "@/components/animations/Floating";
 import { toast } from "sonner";
 
 export interface BookProps {
@@ -22,7 +22,7 @@ export interface BookProps {
   coverImage?: string; // We'll use a gradient placeholder if not provided
 }
 
-export const BookCard = ({ book }: { book: BookProps }) => {
+export const BookCard = React.memo(({ book }: { book: BookProps }) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
@@ -34,8 +34,13 @@ export const BookCard = ({ book }: { book: BookProps }) => {
         {/* Top Image Section */}
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-muted/50 to-muted flex items-center justify-center">
           {book.coverImage ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={book.coverImage} alt={book.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <Image 
+              src={book.coverImage} 
+              alt={book.title} 
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
           ) : (
             <div className="w-24 h-32 rounded bg-primary/20 flex flex-col items-center justify-center border border-primary/30 shadow-inner group-hover:scale-110 transition-transform duration-500">
               <div className="w-16 h-2 bg-primary/40 rounded-full mb-2" />
@@ -109,4 +114,4 @@ export const BookCard = ({ book }: { book: BookProps }) => {
       </Card>
     </motion.div>
   );
-};
+});

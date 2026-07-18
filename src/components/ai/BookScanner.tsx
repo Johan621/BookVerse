@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+import Image from "next/image";
 
 import * as React from "react";
 import { motion } from "framer-motion";
@@ -71,7 +71,9 @@ export const BookScanner = () => {
           onDragOver={(e) => e.preventDefault()}
         >
           {previewUrl ? (
-            <img src={previewUrl} alt="preview" className="max-h-64 object-contain mb-4 rounded" />
+            <div className="relative w-full max-h-64 h-64 mb-4">
+              <Image src={previewUrl} alt="preview" fill className="object-contain rounded" />
+            </div>
           ) : (
             <>
               <svg
@@ -128,8 +130,8 @@ export const BookScanner = () => {
         {result && (
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Cover preview */}
-            <div className="flex items-center justify-center p-4 bg-white/5 rounded-xl">
-              <img src={result.coverUrl} alt="Cover" className="max-h-64 object-contain rounded" />
+            <div className="relative w-full h-64 p-4 bg-white/5 rounded-xl">
+              <Image src={result.coverUrl} alt="Cover" fill className="object-contain rounded" />
             </div>
             {/* Extracted fields */}
             <div className="space-y-4">

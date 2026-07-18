@@ -1,9 +1,8 @@
 // src/components/chat/ChatSidebar.tsx
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import * as React from "react";
-
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface Conversation {
@@ -36,7 +35,9 @@ export const ChatSidebar: React.FC<ChatSidebarProps> = ({ conversations, selecte
             )}
             onClick={() => onSelect(conv.id)}
           >
-            <img src={conv.avatar} alt={conv.name} className="w-10 h-10 rounded-full mr-3" />
+            <div className="relative w-10 h-10 rounded-full mr-3 overflow-hidden shrink-0">
+              <Image src={conv.avatar} alt={conv.name} fill sizes="40px" className="object-cover" />
+            </div>
             <div className="flex-1 min-w-0">
               <p className="font-medium truncate">{conv.name}</p>
               <p className="text-xs text-muted-foreground truncate">{conv.lastMessage}</p>

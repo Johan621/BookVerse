@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Search, ChevronDown, MoreHorizontal, Filter } from "lucide-react";
+import { Search, Filter } from "lucide-react";
 import { toast } from "sonner";
 
 interface Column<T> {

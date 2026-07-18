@@ -1,6 +1,10 @@
 "use client";
 
-import { ActivityChart } from "@/components/admin/charts/ActivityChart";
+import dynamic from "next/dynamic";
+const ActivityChart = dynamic(
+  () => import("@/components/admin/charts/ActivityChart").then(mod => mod.ActivityChart),
+  { ssr: false, loading: () => <div className="h-64 w-full animate-pulse bg-white/5 rounded-xl" /> }
+);
 import { Users, BookOpen, Repeat } from "lucide-react";
 
 // Mock Data for Analytics

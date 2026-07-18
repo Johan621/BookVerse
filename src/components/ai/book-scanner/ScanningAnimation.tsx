@@ -1,6 +1,6 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import * as React from "react";
 import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
@@ -17,10 +17,12 @@ export const ScanningAnimation = ({ imagePreview, progress }: ScanningAnimationP
         
         {/* Mock Image Placeholder or Real Image */}
         {imagePreview ? (
-          <img 
+          <Image 
             src={imagePreview} 
             alt="Book Cover Preview" 
-            className="w-full h-full object-cover opacity-80"
+            fill
+            sizes="(max-width: 768px) 100vw, 448px"
+            className="object-cover opacity-80"
           />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-500/10" />

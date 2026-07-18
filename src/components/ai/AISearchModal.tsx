@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Sparkles, X, Search, BookOpen, ArrowRight } from "lucide-react";
+import { Sparkles, X, BookOpen, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { FadeIn } from "@/components/animations/FadeIn";
 import Link from "next/link";
