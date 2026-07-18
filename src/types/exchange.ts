@@ -18,11 +18,11 @@ export interface ExchangeRequest {
 
 export interface TimelineEvent {
   id: string;
-  type: "request" | "accept" | "meetup_set" | "complete" | "cancel";
+  type: "request" | "accept" | "meetup_set" | "complete" | "cancel" | "REQUESTED" | "MESSAGE" | "ACCEPTED";
   title: string;
   description: string;
   timestamp: string;
-  isCompleted: boolean;
+  isCompleted?: boolean;
 }
 
 export type ExchangeStatus = "pending" | "accepted" | "declined" | "completed";
