@@ -122,7 +122,7 @@ export const ChatArea = ({ conversation, messages, isTyping, onBack, onSendMessa
         <form onSubmit={handleSend} className="flex items-end gap-2 relative">
           
           <Button type="button" variant="ghost" size="sm" className="h-12 w-12 rounded-full shrink-0" onClick={handleImageMock}>
-            <ImageIcon className="w-5 h-5"  alt="" />
+            <ImageIcon className="w-5 h-5" />
           </Button>
 
           <div className="flex-1 relative">
