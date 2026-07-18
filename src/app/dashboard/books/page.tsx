@@ -17,7 +17,7 @@ const MOCK_BOOKS = [
     author: "Thomas H. Cormen",
     status: "PUBLISHED" as BookStatus,
     views: 124,
-    condition: &quot;Good&quot;,
+    condition: "Good",
   },
   {
     id: "b2",
@@ -33,7 +33,7 @@ const MOCK_BOOKS = [
     author: "Abraham Silberschatz",
     status: "DRAFT" as BookStatus,
     views: 0,
-    condition: &quot;Like New&quot;,
+    condition: "Like New",
   },
   {
     id: "b4",
@@ -69,7 +69,7 @@ export default function BooksPage() {
       <FadeIn className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">My Books</h1>
-          <p className="text-muted-foreground text-sm mt-1">Manage the books you've listed for exchange or sale.</p>
+          <p className="text-muted-foreground text-sm mt-1">Manage the books you&apos;ve listed for exchange or sale.</p>
         </div>
         <Link href="/dashboard/books/add">
           <Button variant="primary" className="w-full sm:w-auto font-bold h-11">

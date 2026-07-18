@@ -104,7 +104,7 @@ export default function DashboardPage() {
             <ul className="space-y-2">
               {exchangeRequests.map((req) => (
                 <li key={req.id} className="text-foreground">
-                  {req.from} wants "{req.book}"<br />
+                  {req.from} wants &quot;{req.book}&quot;<br />
                   <Button variant="secondary" size="sm" className="mt-1" onClick={() => alert('Accept request (mock)')}>Accept</Button>
                 </li>
               ))}

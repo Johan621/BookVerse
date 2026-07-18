@@ -35,7 +35,7 @@ export default function SendRequestPage() {
     <div className="max-w-2xl mx-auto pb-8">
       <FadeIn className="mb-8 text-center">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">Request Exchange</h1>
-        <p className="text-muted-foreground text-sm mt-1">What would you like to offer for "Introduction to Algorithms"?</p>
+        <p className="text-muted-foreground text-sm mt-1">What would you like to offer for &quot;Introduction to Algorithms&quot;?</p>
       </FadeIn>
 
       <div className="space-y-6">
