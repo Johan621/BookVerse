@@ -57,17 +57,17 @@ export const ChatArea = ({ conversation, messages, isTyping, onBack, onSendMessa
           
           <div className="relative">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center text-white font-bold shadow-inner">
-              {conversation.user.avatar}
+              {conversation.user?.avatar}
             </div>
-            {conversation.user.online && (
+            {conversation.user?.online && (
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-background rounded-full" />
             )}
           </div>
           
           <div>
-            <h3 className="font-bold text-foreground">{conversation.user.name}</h3>
+            <h3 className="font-bold text-foreground">{conversation.user?.name}</h3>
             <p className="text-xs text-muted-foreground">
-              {isTyping ? <span className="text-primary animate-pulse">typing...</span> : (conversation.user.online ? "Online" : "Offline")}
+              {isTyping ? <span className="text-primary animate-pulse">typing...</span> : (conversation.user?.online ? "Online" : "Offline")}
             </p>
           </div>
         </div>
