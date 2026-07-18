@@ -7,6 +7,7 @@ import { BackgroundWrapper } from "@/components/layout/BackgroundWrapper";
 import { AnimatedCursor } from "@/components/layout/AnimatedCursor";
 import { Navbar } from "@/components/layout/navbar/Navbar";
 import { Footer } from "@/components/footer/Footer";
+import { ReticleDev } from "./reticle-dev";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -74,6 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} min-h-screen font-sans antialiased bg-background text-foreground overflow-x-hidden`}>
+        {process.env.NODE_ENV === 'development' ? <ReticleDev /> : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
