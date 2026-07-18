@@ -42,7 +42,7 @@ export default function ModerationQueuePage() {
     },
     {
       header: "Actions",
-      cell: (item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
+      cell: (_item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
         <div className="flex items-center gap-3">
           <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-500/10 text-green-400 hover:bg-green-500/20 border border-green-500/20 transition-all font-medium text-xs">
             <Check className="w-4 h-4" />

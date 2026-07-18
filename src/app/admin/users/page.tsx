@@ -69,7 +69,7 @@ export default function ManageUsersPage() {
     },
     {
       header: "Actions",
-      cell: (item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
+      cell: (_item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
         <div className="flex items-center gap-2">
           <button onClick={() => toast.info("Coming soon!")} className="p-2 rounded-lg hover:bg-white/10 text-muted-foreground hover:text-foreground transition-colors" title="Email User">
             <Mail className="w-4 h-4" />

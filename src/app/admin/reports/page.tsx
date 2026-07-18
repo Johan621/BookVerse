@@ -56,7 +56,7 @@ export default function ReportsPage() {
     },
     {
       header: "Actions",
-      cell: (item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
+      cell: (_item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
         <div className="flex items-center gap-2">
           <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-medium text-foreground">
             <Eye className="w-4 h-4" />

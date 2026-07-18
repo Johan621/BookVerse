@@ -28,7 +28,7 @@ export const ResetPasswordForm = () => {
     },
   });
 
-  const onSubmit = async (data: ResetPasswordValues) => {
+  const onSubmit = async (_data: ResetPasswordValues) => {
     setIsLoading(true);
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));

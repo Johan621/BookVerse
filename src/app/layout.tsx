@@ -73,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} min-min-h-screen font-sans antialiased bg-background text-foreground overflow-x-hidden`}>
+      <body className={`${inter.variable} min-h-screen font-sans antialiased bg-background text-foreground overflow-x-hidden`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -106,7 +106,7 @@ export default function RootLayout({
         <Providers>
           <AnimatedCursor />
           <BackgroundWrapper>
-            <div className="relative flex min-min-h-screen flex-col">
+            <div className="relative flex min-h-screen flex-col">
               <Navbar />
               <main className="flex-1 flex flex-col">
                 {children}

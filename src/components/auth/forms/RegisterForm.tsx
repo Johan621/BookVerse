@@ -33,7 +33,7 @@ export const RegisterForm = () => {
     },
   });
 
-  const onSubmit = async (data: RegisterValues) => {
+  const onSubmit = async (_data: RegisterValues) => {
     setIsLoading(true);
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));

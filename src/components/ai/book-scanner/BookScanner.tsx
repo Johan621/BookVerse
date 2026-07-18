@@ -57,7 +57,7 @@ export const BookScanner = () => {
     }, 400);
   };
 
-  const handleConfirm = (data: typeof MOCK_RESULTS) => {
+  const handleConfirm = (_data: typeof MOCK_RESULTS) => {
     // Move to next step in real app
     toast.info("Book details confirmed! Ready to list.");
   };

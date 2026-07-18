@@ -15,7 +15,7 @@ export const ChatMain: React.FC<ChatMainProps> = ({ messages }) => {
   const [typing, setTyping] = React.useState(false);
 
   // Simulate typing indicator when a new message is sent (placeholder logic)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
   const handleSend = (_text: string) => {
     setTyping(true);
     setTimeout(() => setTyping(false), 1500);

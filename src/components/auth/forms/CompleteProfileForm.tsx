@@ -28,7 +28,7 @@ export const CompleteProfileForm = () => {
     },
   });
 
-  const onSubmit = async (data: CompleteProfileValues) => {
+  const onSubmit = async (_data: CompleteProfileValues) => {
     setIsLoading(true);
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));

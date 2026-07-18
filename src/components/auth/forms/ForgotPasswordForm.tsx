@@ -26,7 +26,7 @@ export const ForgotPasswordForm = () => {
     },
   });
 
-  const onSubmit = async (data: ForgotPasswordValues) => {
+  const onSubmit = async (_data: ForgotPasswordValues) => {
     setIsLoading(true);
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));

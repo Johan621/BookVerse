@@ -29,7 +29,7 @@ export const LoginForm = () => {
     },
   });
 
-  const onSubmit = async (data: LoginValues) => {
+  const onSubmit = async (_data: LoginValues) => {
     setIsLoading(true);
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));

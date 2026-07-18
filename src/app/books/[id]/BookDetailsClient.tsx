@@ -188,6 +188,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {book.related.map((rel: typeof book.related[0]) => (
             <Link key={rel.id} href={`/books/${rel.id}`}>
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               <BookCard {...rel} status={rel.status as any} />
             </Link>
           ))}

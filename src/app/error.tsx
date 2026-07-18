@@ -23,7 +23,7 @@ export default function Error({
       </div>
       <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Something went wrong!</h2>
       <p className="mt-4 text-muted-foreground max-w-md">
-        An unexpected error occurred while loading this page. We've been notified and are looking into it.
+        An unexpected error occurred while loading this page. We&apos;ve been notified and are looking into it.
       </p>
       <div className="mt-8">
         <Button onClick={() => reset()} variant="primary">
