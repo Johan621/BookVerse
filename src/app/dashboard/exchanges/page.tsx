@@ -7,13 +7,13 @@ import { EmptyState } from "@/components/dashboard/widgets/EmptyStates";
 import { Repeat } from "lucide-react";
 
 const MOCK_SENT_EXCHANGES = [
-  { id: "e1", type: "SENT" as const, status: "PENDING" as ExchangeStatus, requestedBook: "Introduction to Algorithms", offeredBook: "Database Systems", otherUser: "Alex J.", date: "Today" },
-  { id: "e2", type: "SENT" as const, status: "ACCEPTED" as ExchangeStatus, requestedBook: "Engineering Mathematics", offeredBook: undefined, otherUser: "Priya K.", date: "Yesterday" },
-  { id: "e3", type: "SENT" as const, status: "COMPLETED" as ExchangeStatus, requestedBook: "Physics Vol 2", offeredBook: "Chemistry Vol 1", otherUser: "Rahul M.", date: "Oct 12" },
+  { id: "e1", type: "SENT" as const, status: "PENDING" as ExchangeStatus, requestedBook: "Introduction to Algorithms", offeredBook: "Database Systems", otherUser: "Alex J.", date: new Date().toISOString() },
+  { id: "e2", type: "SENT" as const, status: "ACCEPTED" as ExchangeStatus, requestedBook: "Engineering Mathematics", offeredBook: undefined, otherUser: "Priya K.", date: new Date(Date.now() - 86400000).toISOString() },
+  { id: "e3", type: "SENT" as const, status: "COMPLETED" as ExchangeStatus, requestedBook: "Physics Vol 2", offeredBook: "Chemistry Vol 1", otherUser: "Rahul M.", date: "2023-10-12T00:00:00Z" },
 ];
 
 const MOCK_RECEIVED_EXCHANGES = [
-  { id: "e4", type: "RECEIVED" as const, status: "PENDING" as ExchangeStatus, requestedBook: "Operating Systems", offeredBook: "Computer Networks", otherUser: "Sam S.", date: "2 hours ago" },
+  { id: "e4", type: "RECEIVED" as const, status: "PENDING" as ExchangeStatus, requestedBook: "Operating Systems", offeredBook: "Computer Networks", otherUser: "Sam S.", date: new Date(Date.now() - 2 * 3600000).toISOString() },
 ];
 
 export default function ExchangesHubPage() {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { format } from "date-fns";
+import { format, isValid } from "date-fns";
 import { BookOpen, Clock, CheckCircle2, XCircle, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -13,7 +13,7 @@ interface ExchangeCardProps {
   requestedBook: string;
   offeredBook?: string; // If undefined, implies cash purchase
   otherUser: string;
-  date: string;
+  date: string | Date | null | undefined;
 }
 
 const statusConfig: Record<ExchangeStatus, { color: string; icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; label: string }> = {
@@ -22,6 +22,19 @@ const statusConfig: Record<ExchangeStatus, { color: string; icon: React.Componen
   COMPLETED: { color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20", icon: CheckCircle2, label: "Completed" },
   REJECTED: { color: "text-red-400 bg-red-500/10 border-red-500/20", icon: XCircle, label: "Rejected" },
   CANCELLED: { color: "text-gray-400 bg-gray-500/10 border-gray-500/20", icon: XCircle, label: "Cancelled" },
+};
+
+const safelyFormatDate = (dateVal: string | Date | null | undefined): string => {
+  if (!dateVal) return "Unknown date";
+  const d = typeof dateVal === "string" ? new Date(dateVal) : dateVal;
+  if (isValid(d)) {
+    return format(d, 'MMM d, yyyy');
+  }
+  // If parsing failed but it was a non-empty string like "Today", return that as fallback
+  if (typeof dateVal === "string" && dateVal.trim() !== "") {
+    return dateVal;
+  }
+  return "Unknown date";
 };
 
 export const ExchangeCard = ({ id, type, status, requestedBook, offeredBook, otherUser, date }: ExchangeCardProps) => {
@@ -42,7 +55,7 @@ export const ExchangeCard = ({ id, type, status, requestedBook, offeredBook, oth
                 <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                   {type === "SENT" ? "You Requested" : "Requested from you"}
                 </span>
-                <span className="text-[10px] text-muted-foreground">• {format(new Date(date as unknown as string), 'MMM d, yyyy')}</span>
+                <span className="text-[10px] text-muted-foreground">• {safelyFormatDate(date)}</span>
               </div>
               <h3 className="font-bold text-foreground truncate group-hover:text-primary transition-colors">{requestedBook}</h3>
               <p className="text-xs text-muted-foreground truncate mt-0.5">
