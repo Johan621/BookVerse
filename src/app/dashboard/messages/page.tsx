@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { ConversationList, type Conversation } from "@/components/dashboard/messages/ConversationList";
-import { ChatArea, type Message } from "@/components/dashboard/messages/ChatArea";
+import { ConversationList } from "@/components/dashboard/messages/ConversationList";
+import { ChatArea } from "@/components/dashboard/messages/ChatArea";
+import type { Conversation, Message } from "@/types/chat";
 import { MessageSquareOff } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { toast } from "sonner";
