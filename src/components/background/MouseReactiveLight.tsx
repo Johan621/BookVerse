@@ -37,7 +37,7 @@ export const MouseReactiveLight = React.forwardRef<HTMLDivElement, React.HTMLAtt
             ease: "backOut",
             duration: 0.5,
           }}
-          className="absolute h-[800px] w-[800px] rounded-full bg-primary/5 blur-[150px] dark:bg-primary/10"
+          className="absolute h-[800px] w-full max-w-[800px] rounded-full bg-primary/5 blur-[150px] dark:bg-primary/10"
         />
       </div>
     );

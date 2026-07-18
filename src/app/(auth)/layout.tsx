@@ -6,7 +6,7 @@ export default function AuthRootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-min-h-screen bg-background">
       {children}
     </main>
   );

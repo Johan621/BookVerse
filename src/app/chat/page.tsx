@@ -16,9 +16,9 @@ export default function ChatPage() {
   const messages = MOCK_MESSAGES[selectedId] ?? [];
 
   return (
-    <section className="flex min-h-screen bg-gradient-to-br from-primary/10 via-background to-background p-6">
-      <FadeIn className="flex w-full max-w-7xl mx-auto space-x-6">
-        <Card variant="glass" padding="lg" className="w-80 flex flex-col">
+    <section className="flex min-min-h-screen bg-gradient-to-br from-primary/10 via-background to-background p-6">
+      <FadeIn className="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-6">
+        <Card variant="glass" padding="lg" className="w-full md:w-80 flex flex-col shrink-0">
           <ChatSidebar
             conversations={MOCK_CONVERSATIONS}
             selectedId={selectedId}

@@ -12,7 +12,7 @@ export const HeroVisuals = () => {
     <div className="relative w-full h-full min-h-[500px] flex items-center justify-center lg:justify-end">
       {/* Decorative center orb */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="h-[300px] w-[300px] rounded-full bg-primary/20 blur-[100px] mix-blend-screen" />
+        <div className="h-[300px] w-full max-w-[300px] rounded-full bg-primary/20 blur-[100px] mix-blend-screen" />
       </div>
 
       <div className="relative w-full max-w-md aspect-square">

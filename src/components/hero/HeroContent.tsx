@@ -33,7 +33,7 @@ export const HeroContent = () => {
           <RevealText text="Build Community." delay={0.4} />
         </h1>
         <FadeIn delay={0.6}>
-          <p className="max-w-[600px] text-lg text-muted-foreground sm:text-xl leading-relaxed">
+          <p className="max-w-full max-w-[600px] text-lg text-muted-foreground sm:text-xl leading-relaxed">
             Help students buy, sell, donate, and exchange textbooks while saving money and building a stronger learning community.
           </p>
         </FadeIn>

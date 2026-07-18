@@ -91,7 +91,7 @@ export const RegisterForm = () => {
         </div>
       </div>
 
-      <div className="flex items-start space-x-2 pt-2">
+      <div className="flex items-start gap-2 pt-2">
         <Checkbox id="acceptTerms" {...register("acceptTerms")} className="mt-1" />
         <div className="grid gap-1.5 leading-none">
           <Label htmlFor="acceptTerms" className="text-sm text-muted-foreground font-normal leading-relaxed cursor-pointer">

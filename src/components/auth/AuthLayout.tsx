@@ -16,7 +16,7 @@ interface AuthLayoutProps {
 
 export const AuthLayout = ({ children, title, subtitle, quote = "“BookVerse AI completely changed how I find textbooks for my semester. I saved thousands of rupees and met amazing people on campus.”", quoteAuthor = "Sarah J., Engineering Student" }: AuthLayoutProps) => {
   return (
-    <main className="min-h-screen w-full flex bg-background">
+    <main className="min-min-h-screen w-full flex bg-background">
       {/* Left Panel: Form (Glassmorphism) */}
       <section className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:w-1/2 xl:w-5/12 relative z-10">
         <div className="mx-auto w-full max-w-sm lg:max-w-md">

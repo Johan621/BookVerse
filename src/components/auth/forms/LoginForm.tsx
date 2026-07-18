@@ -77,7 +77,7 @@ export const LoginForm = () => {
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <Checkbox id="rememberMe" {...register("rememberMe")} />
           <Label htmlFor="rememberMe" className="text-sm text-muted-foreground font-normal cursor-pointer">
             Remember me

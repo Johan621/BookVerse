@@ -85,7 +85,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder = "Search..." }:
                 </tr>
               )}
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
       

@@ -68,7 +68,7 @@ export default function ExchangePage() {
   });
 
   return (
-    <section className="flex flex-col items-center min-h-screen p-8">
+    <section className="flex flex-col items-center min-min-h-screen p-8">
       <FadeIn className="w-full max-w-5xl space-y-8">
         <h1 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400">
           Exchange Module

@@ -68,7 +68,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
 
   if (!book) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-min-h-screen">
         <p className="text-muted-foreground">Book not found.</p>
         <Button className="ml-4" onClick={() => router.back()}>
           Go Back
