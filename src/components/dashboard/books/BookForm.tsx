@@ -116,7 +116,7 @@ export const BookForm = ({ initialData, isEditing = false }: BookFormProps) => {
 
             {images.map((img, idx) => (
               <div key={img} className="h-40 rounded-2xl bg-white/10 border border-white/10 relative overflow-hidden flex items-center justify-center group">
-                <ImageIcon className="w-10 h-10 text-muted-foreground/50"  alt="" />
+                <ImageIcon className="w-10 h-10 text-muted-foreground/50" />
                 <button
                   type="button"
                   onClick={() => removeImageMock(idx)}
