@@ -29,8 +29,14 @@ export type ExchangeStatus = "pending" | "accepted" | "declined" | "completed";
 
 export interface ExchangeCardProps {
   id: string;
-  bookTitle: string;
-  owner: string;
+  bookTitle?: string;
+  owner?: string;
   status: ExchangeStatus;
   date: string;
+  
+  // Alternative mock properties
+  type?: "SENT" | "RECEIVED" | "ACTIVE" | "COMPLETED";
+  requestedBook?: string;
+  offeredBook?: string;
+  otherUser?: string;
 }
