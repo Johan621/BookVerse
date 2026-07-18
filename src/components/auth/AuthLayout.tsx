@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatedAurora } from "@/components/background/AnimatedAurora";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { BookOpen } from "lucide-react";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -23,8 +23,8 @@ export const AuthLayout = ({ children, title, subtitle, quote = "“Havnark comp
           {/* Logo & Header */}
           <FadeIn>
             <Link href="/" className="flex items-center gap-2 mb-12">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30">
-                <BookOpen className="w-6 h-6 text-primary" />
+              <div className="flex items-center justify-center">
+                <Image src="/brand/havnark-logo.png" alt="Havnark Logo" width={40} height={40} className="w-10 h-10 object-contain" />
               </div>
               <span className="font-bold text-xl tracking-tight">Havnark</span>
             </Link>

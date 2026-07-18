@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bookverse.ai"),
+  metadataBase: new URL("https://havnark.com"),
   title: {
     default: "Havnark | Discover. Exchange. Grow.",
     template: "%s | Havnark",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Havnark | Discover. Exchange. Grow.",
     description: "Havnark is an AI-powered knowledge platform where readers discover books, exchange them, organize personal libraries, receive intelligent recommendations, and connect through a collaborative reading community.",
-    url: "https://bookverse.ai",
+    url: "https://havnark.com",
     siteName: "Havnark",
     locale: "en_US",
     type: "website",
@@ -81,10 +81,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Havnark",
-              url: "https://bookverse.ai",
+              url: "https://havnark.com",
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://bookverse.ai/books?q={search_term_string}",
+                target: "https://havnark.com/books?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),
@@ -97,8 +97,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Havnark",
-              url: "https://bookverse.ai",
-              logo: "https://bookverse.ai/images/og-image.jpg",
+              url: "https://havnark.com",
+              logo: "https://havnark.com/opengraph-image.png",
               description: "Havnark is an AI-powered knowledge platform where readers discover books, exchange them, organize personal libraries, receive intelligent recommendations, and connect through a collaborative reading community.",
             }),
           }}

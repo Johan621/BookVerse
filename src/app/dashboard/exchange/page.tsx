@@ -79,7 +79,7 @@ export default function ExchangePage() {
             <Button
               key={type}
               variant={filter === type ? "primary" : "ghost"}
-              onClick={() => setFilter(type as any)}
+              onClick={() => setFilter(type as "All" | "Incoming" | "Outgoing")}
             >
               {type}
             </Button>

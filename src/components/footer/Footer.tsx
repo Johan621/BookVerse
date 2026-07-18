@@ -2,13 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/ui/Button";
 import { toast } from "sonner";
 import {
-  BookOpen, Globe, MessageSquare, Share2, 
+  Globe, MessageSquare, Share2, 
   Mail, ArrowRight 
 } from "lucide-react";
 
@@ -45,8 +46,8 @@ export const Footer = () => {
           {/* Brand & Newsletter Column */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-2 group w-fit">
-              <div className="p-2 rounded-xl bg-gradient-to-br from-primary to-blue-500 text-white shadow-lg group-hover:scale-[1.02] transition-transform">
-                <BookOpen className="h-6 w-6" />
+              <div className="shadow-lg group-hover:scale-[1.02] transition-transform flex items-center justify-center">
+                <Image src="/brand/havnark-logo.png" alt="Havnark Logo" width={40} height={40} className="w-10 h-10 object-contain" />
               </div>
               <span className="font-bold text-xl tracking-tight text-foreground">
                 Havnark<span className="text-primary"></span>

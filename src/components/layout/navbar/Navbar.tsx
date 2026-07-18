@@ -3,9 +3,9 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/common/Container";
 import { MagneticButton } from "@/components/animations/MagneticButton";
@@ -96,12 +96,12 @@ export const Navbar = () => {
         <div className="flex flex-1 items-center justify-start">
           <Link href="/" className="group flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md">
             <motion.div
-              whileHover={{ rotate: 15, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ rotate: 5, scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm"
+              className="flex items-center justify-center"
             >
-              <BookOpen className="h-5 w-5" />
+              <Image src="/brand/havnark-logo.png" alt="Havnark Logo" width={32} height={32} className="w-8 h-8 object-contain" />
             </motion.div>
             <span className="text-xl font-bold tracking-tight text-gradient">Havnark</span>
           </Link>

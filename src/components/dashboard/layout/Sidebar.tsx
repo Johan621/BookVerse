@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { 
@@ -38,8 +39,8 @@ export const Sidebar = () => {
         {/* Logo */}
         <div className="h-20 flex items-center px-6 border-b border-white/10">
           <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30">
-              <BookOpen className="w-5 h-5 text-primary" />
+            <div className="w-8 h-8 flex items-center justify-center">
+              <Image src="/brand/havnark-logo.png" alt="Havnark Logo" width={32} height={32} className="w-8 h-8 object-contain" />
             </div>
             <span className="font-bold text-lg tracking-tight">Havnark</span>
           </Link>
