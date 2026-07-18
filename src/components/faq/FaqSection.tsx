@@ -16,7 +16,7 @@ const FAQ_DATA = [
   },
   {
     question: "Is the platform free?",
-    answer: "Yes! BookVerse AI is completely free for students to use for direct exchanges. We don't charge subscription fees or transaction fees for swapping books.",
+    answer: "Yes! Havnark is completely free for students to use for direct exchanges. We don't charge subscription fees or transaction fees for swapping books.",
   },
   {
     question: "Can I donate books?",
@@ -52,7 +52,7 @@ export const FaqSection = () => {
               Frequently Asked Questions
             </SectionHeading>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              Everything you need to know about BookVerse AI and how it works.
+              Everything you need to know about Havnark and how it works.
             </p>
           </FadeIn>
         </div>

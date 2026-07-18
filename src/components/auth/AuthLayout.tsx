@@ -14,7 +14,7 @@ interface AuthLayoutProps {
   quoteAuthor?: string;
 }
 
-export const AuthLayout = ({ children, title, subtitle, quote = "“BookVerse AI completely changed how I find textbooks for my semester. I saved thousands of rupees and met amazing people on campus.”", quoteAuthor = "Sarah J., Engineering Student" }: AuthLayoutProps) => {
+export const AuthLayout = ({ children, title, subtitle, quote = "“Havnark completely changed how I find textbooks for my semester. I saved thousands of rupees and met amazing people on campus.”", quoteAuthor = "Sarah J., Engineering Student" }: AuthLayoutProps) => {
   return (
     <main className="min-h-screen w-full flex bg-background pt-16">
       {/* Left Panel: Form (Glassmorphism) */}
@@ -26,7 +26,7 @@ export const AuthLayout = ({ children, title, subtitle, quote = "“BookVerse AI
               <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30">
                 <BookOpen className="w-6 h-6 text-primary" />
               </div>
-              <span className="font-bold text-xl tracking-tight">BookVerse AI</span>
+              <span className="font-bold text-xl tracking-tight">Havnark</span>
             </Link>
 
             <h1 className="text-3xl font-extrabold tracking-tight mb-2">

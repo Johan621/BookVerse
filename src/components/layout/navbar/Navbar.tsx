@@ -103,7 +103,7 @@ export const Navbar = () => {
             >
               <BookOpen className="h-5 w-5" />
             </motion.div>
-            <span className="text-xl font-bold tracking-tight text-gradient">BookVerse</span>
+            <span className="text-xl font-bold tracking-tight text-gradient">Havnark</span>
           </Link>
         </div>
 

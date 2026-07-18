@@ -3,8 +3,8 @@ import { ResetPasswordForm } from "@/components/auth/forms/ResetPasswordForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Set New Password - BookVerse AI",
-  description: "Set a new password for your BookVerse AI account.",
+  title: "Set New Password - Havnark",
+  description: "Set a new password for your Havnark account.",
 };
 
 export default function ResetPasswordPage() {

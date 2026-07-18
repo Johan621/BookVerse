@@ -27,7 +27,7 @@ export const CommunityEcosystem = () => {
               Join the Movement
             </SectionHeading>
             <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              BookVerse AI isn&apos;t just an exchange platform. It&apos;s a rapidly expanding network of students dedicated to sharing knowledge and making education more affordable.
+              Havnark isn&apos;t just an exchange platform. It&apos;s a rapidly expanding network of students dedicated to sharing knowledge and making education more affordable.
             </p>
           </FadeIn>
         </div>

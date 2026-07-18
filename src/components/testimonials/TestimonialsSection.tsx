@@ -22,7 +22,7 @@ export const TestimonialsSection = () => {
               Don&apos;t Just Take Our Word For It
             </SectionHeading>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              Thousands of students are already using BookVerse AI to save money, share knowledge, and build stronger campus communities.
+              Thousands of students are already using Havnark to save money, share knowledge, and build stronger campus communities.
             </p>
           </FadeIn>
         </div>

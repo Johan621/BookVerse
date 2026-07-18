@@ -47,7 +47,7 @@ export default function AdminOverview() {
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground">Dashboard Overview</h1>
-        <p className="text-muted-foreground mt-2">Welcome back. Here&apos;s what&apos;s happening on BookVerse today.</p>
+        <p className="text-muted-foreground mt-2">Welcome back. Here&apos;s what&apos;s happening on Havnark today.</p>
       </div>
 
       {/* Stats Grid */}

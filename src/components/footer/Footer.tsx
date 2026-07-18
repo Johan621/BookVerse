@@ -49,12 +49,12 @@ export const Footer = () => {
                 <BookOpen className="h-6 w-6" />
               </div>
               <span className="font-bold text-xl tracking-tight text-foreground">
-                BookVerse<span className="text-primary">AI</span>
+                Havnark<span className="text-primary"></span>
               </span>
             </Link>
             
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-              The smartest platform for students to exchange books, save money, and share knowledge across campuses worldwide.
+              Havnark is an AI-powered knowledge platform where readers discover books, exchange them, organize personal libraries, receive intelligent recommendations, and connect through a collaborative reading community.
             </p>
 
             <div className="mt-4">
@@ -117,7 +117,7 @@ export const Footer = () => {
             
             <div className="flex items-center gap-2 text-muted-foreground mt-2">
               <Mail className="w-4 h-4" />
-              <span className="text-sm">support@bookverse.ai</span>
+              <span className="text-sm">support@havnark.com</span>
             </div>
           </div>
 
@@ -126,7 +126,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {year || "2026"} BookVerse AI. All rights reserved.
+            &copy; {year || "2026"} Havnark. All rights reserved.
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">

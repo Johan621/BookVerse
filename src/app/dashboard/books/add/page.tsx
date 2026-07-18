@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Add Book - BookVerse AI",
+  title: "Add Book - Havnark",
   description: "List a new book for exchange or sale.",
 };
 

@@ -15,8 +15,8 @@ import { CtaSection } from "@/components/cta/CtaSection";
 import { AboutSection } from "@/components/about/AboutSection";
 
 export const metadata: Metadata = {
-  title: "BookVerse AI | The Future of Student Book Exchange",
-  description: "Join the largest AI-powered student book exchange. Discover, buy, and trade textbooks safely.",
+  title: "Havnark | Discover. Exchange. Grow.",
+  description: "Havnark is an AI-powered knowledge platform where readers discover books, exchange them, organize personal libraries, receive intelligent recommendations, and connect through a collaborative reading community.",
   alternates: {
     canonical: "/",
   }

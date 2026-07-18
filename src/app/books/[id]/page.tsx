@@ -49,7 +49,7 @@ export default async function BookDetailsPage({ params }: { params: Promise<{ id
       "@type": "Person",
       name: book.author,
     },
-    image: `https://bookverse.ai${book.coverUrl}`,
+    image: `https://havnark.com${book.coverUrl}`,
     description: book.description,
   } : null;
 

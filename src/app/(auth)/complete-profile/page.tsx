@@ -3,8 +3,8 @@ import { CompleteProfileForm } from "@/components/auth/forms/CompleteProfileForm
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Complete Profile - BookVerse AI",
-  description: "Complete your BookVerse AI profile.",
+  title: "Complete Profile - Havnark",
+  description: "Complete your Havnark profile.",
 };
 
 export default function CompleteProfilePage() {

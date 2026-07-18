@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'BookVerse AI',
-    short_name: 'BookVerse',
-    description: 'An AI-powered Online Book Exchange Platform for students.',
+    name: 'Havnark',
+    short_name: 'Havnark',
+    description: 'Havnark is an AI-powered knowledge platform where readers discover books, exchange them, organize personal libraries, receive intelligent recommendations, and connect through a collaborative reading community.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
-  title: "Dashboard - BookVerse AI",
+  title: "Dashboard - Havnark",
   description: "Manage your book exchanges, wishlist, and profile.",
 };
 

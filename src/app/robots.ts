@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/dashboard/', '/login', '/register', '/reset-password', '/forgot-password', '/verify-email', '/complete-profile'],
     },
-    sitemap: 'https://bookverse.ai/sitemap.xml',
+    sitemap: 'https://havnark.com/sitemap.xml',
   };
 }
