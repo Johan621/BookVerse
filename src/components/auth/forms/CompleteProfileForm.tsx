@@ -34,10 +34,8 @@ export const CompleteProfileForm = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsLoading(false);
     
-    console.log("Complete Profile data:", data);
     toast.success("Profile updated successfully! (Mock)");
     router.push("/dashboard");
-    // TODO: Implement Supabase Auth update profile
   };
 
   return (

@@ -35,9 +35,7 @@ export const LoginForm = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsLoading(false);
     
-    console.log("Login data:", data);
     toast.success("Successfully logged in! (Mock)");
-    // TODO: Implement Supabase Auth integration here
   };
 
   return (

@@ -8,6 +8,7 @@ import { ExtractionResult } from "./ExtractionResult";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { SlideUp } from "@/components/animations/SlideUp";
 import { Sparkles } from "lucide-react";
+import { toast } from "sonner";
 
 type ScannerState = "IDLE" | "SCANNING" | "RESULTS";
 
@@ -57,9 +58,8 @@ export const BookScanner = () => {
   };
 
   const handleConfirm = (data: typeof MOCK_RESULTS) => {
-    console.log("Confirmed Data:", data);
     // Move to next step in real app
-    alert("Book details confirmed! Ready to list.");
+    toast.info("Book details confirmed! Ready to list.");
   };
 
   const handleRetry = () => {

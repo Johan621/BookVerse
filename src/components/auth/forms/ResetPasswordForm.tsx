@@ -34,10 +34,8 @@ export const ResetPasswordForm = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsLoading(false);
     
-    console.log("Reset password data:", data);
     toast.success("Password successfully reset! (Mock)");
     router.push("/login");
-    // TODO: Implement Supabase Auth update password
   };
 
   return (

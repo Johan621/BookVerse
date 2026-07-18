@@ -21,11 +21,11 @@ export default function ManageUsersPage() {
       cell: (item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-white/10 flex items-center justify-center font-bold text-purple-300">
-            {user.name.charAt(0)}
+            {item.name.charAt(0)}
           </div>
           <div>
-            <p className="font-medium text-foreground">{user.name}</p>
-            <p className="text-xs text-muted-foreground">{user.id}</p>
+            <p className="font-medium text-foreground">{item.name}</p>
+            <p className="text-xs text-muted-foreground">{item.id}</p>
           </div>
         </div>
       )
@@ -38,11 +38,11 @@ export default function ManageUsersPage() {
       header: "Role",
       cell: (item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
         <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${
-          user.role === 'Admin' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
-          user.role === 'Moderator' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
+          item.role === 'Admin' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
+          item.role === 'Moderator' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
           'bg-white/5 text-muted-foreground border-white/10'
         }`}>
-          {user.role}
+          {item.role}
         </span>
       )
     },
@@ -50,16 +50,16 @@ export default function ManageUsersPage() {
       header: "Status",
       cell: (item: any /* eslint-disable-line @typescript-eslint/no-explicit-any */) => (
         <span className={`px-2.5 py-1 rounded-full text-xs font-medium flex items-center gap-1.5 w-fit ${
-          user.status === 'Active' ? 'text-green-400' :
-          user.status === 'Blocked' ? 'text-red-400' :
+          item.status === 'Active' ? 'text-green-400' :
+          item.status === 'Blocked' ? 'text-red-400' :
           'text-yellow-400'
         }`}>
           <div className={`w-1.5 h-1.5 rounded-full ${
-            user.status === 'Active' ? 'bg-green-400' :
-            user.status === 'Blocked' ? 'bg-red-400' :
+            item.status === 'Active' ? 'bg-green-400' :
+            item.status === 'Blocked' ? 'bg-red-400' :
             'bg-yellow-400'
           }`} />
-          {user.status}
+          {item.status}
         </span>
       )
     },

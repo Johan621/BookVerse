@@ -5,6 +5,7 @@ import { LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 // Mock data
 const analytics = { booksListed: 12, exchangesCompleted: 5, totalSavings: "$45" };
@@ -91,7 +92,7 @@ export default function DashboardPage() {
                 </li>
               ))}
             </ul>
-            <Button variant="outline" className="mt-2 w-full" onClick={() => alert('Add to wishlist (mock)')}>Add New</Button>
+            <Button variant="outline" className="mt-2 w-full" onClick={() => toast.info('Add to wishlist (mock)')}>Add New</Button>
           </CardContent>
         </Card>
 
@@ -105,7 +106,7 @@ export default function DashboardPage() {
               {exchangeRequests.map((req) => (
                 <li key={req.id} className="text-foreground">
                   {req.from} wants &quot;{req.book}&quot;<br />
-                  <Button variant="secondary" size="sm" className="mt-1" onClick={() => alert('Accept request (mock)')}>Accept</Button>
+                  <Button variant="secondary" size="sm" className="mt-1" onClick={() => toast.info('Accept request (mock)')}>Accept</Button>
                 </li>
               ))}
             </ul>
@@ -133,7 +134,7 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent>
             <p className="text-2xl font-bold text-foreground">{analytics.totalSavings}</p>
-            <Button variant="ghost" size="sm" onClick={() => alert('View savings history (mock)')}>View History</Button>
+            <Button variant="ghost" size="sm" onClick={() => toast.info('View savings history (mock)')}>View History</Button>
           </CardContent>
         </Card>
 

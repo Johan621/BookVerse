@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { BookCard } from "@/components/dashboard/books/BookCard";
 import { Heart, Bookmark, MessageSquare, ArrowRight } from "lucide-react";
+import { toast } from "sonner";
 
 // Mock data for demonstration
 export const mockBooks = {
@@ -136,14 +137,14 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
             <Button
               variant="primary"
               className="flex items-center gap-2"
-              onClick={() => alert("Exchange flow (mock) triggered")}
+              onClick={() => toast.info("Exchange flow (mock) triggered")}
             >
               <ArrowRight className="w-4 h-4" /> Exchange
             </Button>
             <Button
               variant="outline"
               className="flex items-center gap-2"
-              onClick={() => alert("Chat flow (mock) triggered")}
+              onClick={() => toast.info("Chat flow (mock) triggered")}
             >
               <MessageSquare className="w-4 h-4" /> Chat
             </Button>
@@ -187,7 +188,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {book.related.map((rel: typeof book.related[0]) => (
             <Link key={rel.id} href={`/books/${rel.id}`}>
-              <BookCard {...rel} />
+              <BookCard {...rel} status={rel.status as any} />
             </Link>
           ))}
         </div>

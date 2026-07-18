@@ -39,9 +39,7 @@ export const RegisterForm = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsLoading(false);
     
-    console.log("Register data:", data);
     toast.success("Successfully registered! (Mock)");
-    // TODO: Implement Supabase Auth integration here
   };
 
   return (

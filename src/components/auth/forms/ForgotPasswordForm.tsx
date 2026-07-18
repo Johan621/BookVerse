@@ -33,9 +33,7 @@ export const ForgotPasswordForm = () => {
     setIsLoading(false);
     setIsSubmitted(true);
     
-    console.log("Forgot password data:", data);
     toast.success("Reset link sent! (Mock)");
-    // TODO: Implement Supabase Auth reset password
   };
 
   if (isSubmitted) {
