@@ -12,7 +12,7 @@ export interface ExchangeRequest {
   bookTitle?: string;
   ownerId?: string;
   requesterId?: string;
-  status: "pending" | "accepted" | "declined" | "completed" | "Pending" | "Accepted" | "Rejected";
+  status: "pending" | "accepted" | "declined" | "completed" | "Pending" | "Accepted" | "Rejected" | "Completed";
   createdAt?: string; // ISO format
 }
 
