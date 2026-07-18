@@ -4,11 +4,7 @@ import { Container } from "@/components/common/Container";
 import { Section } from "@/components/common/Section";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ChevronRight, Wrench } from "lucide-react";
-
-interface Breadcrumb {
-  label: string;
-  href: string;
-}
+import type { Breadcrumb } from "@/types/common";
 
 interface ConstructionPlaceholderProps {
   title: string;

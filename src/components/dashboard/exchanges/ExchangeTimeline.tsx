@@ -1,13 +1,6 @@
 import * as React from "react";
 import { Check, Clock, X, MessageSquare } from "lucide-react";
-
-interface TimelineEvent {
-  id: string;
-  type: "REQUESTED" | "ACCEPTED" | "REJECTED" | "COMPLETED" | "MESSAGE";
-  title: string;
-  description: string;
-  timestamp: string;
-}
+import type { TimelineEvent } from "@/types/exchange";
 
 const getEventIcon = (type: TimelineEvent["type"]) => {
   switch (type) {

@@ -5,13 +5,7 @@ import { motion } from "framer-motion";
 import { slideUp } from "@/components/animations/variants";
 
 import { HTMLMotionProps } from "framer-motion";
-
-export interface EmptyStateProps extends HTMLMotionProps<"div"> {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  action?: React.ReactNode;
-}
+import type { EmptyStateProps } from "@/types/common";
 
 export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
   ({ className, icon: Icon, title, description, action, ...props }, ref) => {

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Heart, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { EmptyState } from "./EmptyStates";
+import { EmptyState } from "@/components/common/EmptyState";
 import { toast } from "sonner";
 
 const MOCK_WISHLIST = [
@@ -30,7 +30,7 @@ export const WishlistPreview = () => {
           icon={Heart}
           title="Wishlist is empty"
           description="Save books you're looking for and we'll notify you when they're available."
-          actionLabel="Browse Books"
+          action={<Button variant="outline" onClick={() => toast.info("Coming soon!")}>Browse Books</Button>}
         />
       </div>
     );

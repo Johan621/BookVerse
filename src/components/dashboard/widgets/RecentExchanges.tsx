@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Repeat, CheckCircle2, Clock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { EmptyState } from "./EmptyStates";
+import { EmptyState } from "@/components/common/EmptyState";
 import { toast } from "sonner";
 
 const MOCK_EXCHANGES = [
@@ -32,7 +32,7 @@ export const RecentExchanges = () => {
           icon={Repeat}
           title="No exchanges yet"
           description="Start exploring and request a book to see your active exchanges here."
-          actionLabel="Find Books"
+          action={<Button variant="outline" onClick={() => toast.info("Coming soon!")}>Find Books</Button>}
         />
       </div>
     );

@@ -3,18 +3,9 @@ import { format, isValid } from "date-fns";
 import { BookOpen, Clock, CheckCircle2, XCircle, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/animations/FadeIn";
+import type { ExchangeCardProps } from "@/types/exchange";
 
 export type ExchangeStatus = "PENDING" | "ACCEPTED" | "REJECTED" | "COMPLETED" | "CANCELLED";
-
-interface ExchangeCardProps {
-  id: string;
-  type: "SENT" | "RECEIVED";
-  status: ExchangeStatus;
-  requestedBook: string;
-  offeredBook?: string; // If undefined, implies cash purchase
-  otherUser: string;
-  date: string | Date | null | undefined;
-}
 
 const statusConfig: Record<ExchangeStatus, { color: string; icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; label: string }> = {
   PENDING: { color: "text-amber-500 bg-amber-500/10 border-amber-500/20", icon: Clock, label: "Pending" },

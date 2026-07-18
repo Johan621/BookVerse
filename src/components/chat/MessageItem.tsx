@@ -4,15 +4,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-
-interface Message {
-  id: string;
-  from: "me" | "them";
-  content: string;
-  timestamp: string;
-  read: boolean;
-  imageUrl?: string;
-}
+import type { Message } from "@/types/chat";
 
 export const MessageItem: React.FC<{ message: Message }> = React.memo(({ message }) => {
   const isMe = message.from === "me";

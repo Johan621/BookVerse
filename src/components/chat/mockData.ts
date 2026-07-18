@@ -1,21 +1,5 @@
+import type { Message, Conversation } from "@/types/chat";
 // src/components/chat/mockData.ts
-export interface Conversation {
-  id: string;
-  name: string;
-  avatar: string; // URL or path
-  lastMessage: string;
-  unread: number;
-}
-
-export interface Message {
-  id: string;
-  from: "me" | "them";
-  content: string;
-  timestamp: string; // ISO
-  read: boolean;
-  imageUrl?: string;
-}
-
 export const MOCK_CONVERSATIONS: Conversation[] = [
   {
     id: "c1",

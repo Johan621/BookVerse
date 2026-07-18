@@ -4,14 +4,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-
-interface Conversation {
-  id: string;
-  name: string;
-  avatar: string;
-  lastMessage: string;
-  unread: number;
-}
+import type { Conversation } from "@/types/chat";
 
 interface ChatSidebarProps {
   conversations: Conversation[];

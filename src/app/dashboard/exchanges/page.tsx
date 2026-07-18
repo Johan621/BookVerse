@@ -3,7 +3,7 @@
 import * as React from "react";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ExchangeCard, type ExchangeStatus } from "@/components/dashboard/exchanges/ExchangeCard";
-import { EmptyState } from "@/components/dashboard/widgets/EmptyStates";
+import { EmptyState } from "@/components/common/EmptyState";
 import { Repeat } from "lucide-react";
 
 const MOCK_SENT_EXCHANGES = [

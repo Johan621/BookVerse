@@ -8,19 +8,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Bookmark, Heart, Star, CheckCircle2, Eye } from "lucide-react";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { toast } from "sonner";
-
-export interface BookProps {
-  id: string;
-  title: string;
-  author: string;
-  department: string;
-  semester: string;
-  condition: "Like New" | "Good" | "Fair" | "Heavily Used";
-  price: number;
-  rating: number;
-  isVerified: boolean;
-  coverImage?: string; // We'll use a gradient placeholder if not provided
-}
+import type { BookProps } from "@/types/book";
 
 export const BookCard = React.memo(({ book }: { book: BookProps }) => {
   return (

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BookCard, type BookStatus } from "@/components/dashboard/books/BookCard";
-import { EmptyState } from "@/components/dashboard/widgets/EmptyStates";
+import { EmptyState } from "@/components/common/EmptyState";
 import { BookOpen } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
 
@@ -114,7 +114,7 @@ export default function BooksPage() {
             icon={BookOpen}
             title={filter === "ALL" ? "You haven't listed any books yet" : `No books found with status: ${filter.toLowerCase()}`}
             description={filter === "ALL" ? "Start building your digital library to exchange with other students." : "Try changing the filter to see other books."}
-            actionLabel={filter === "ALL" ? "Add Your First Book" : undefined}
+            action={filter === "ALL" ? <Link href="/dashboard/books/new"><Button variant="primary">Add Your First Book</Button></Link> : undefined}
           />
         </FadeIn>
       ) : (

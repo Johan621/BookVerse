@@ -5,15 +5,7 @@ import * as React from "react";
 import { MessageList } from "@/components/chat/MessageList";
 import { ChatInput } from "@/components/chat/ChatInput";
 import { TypingIndicator } from "@/components/chat/TypingIndicator";
-
-interface Message {
-  id: string;
-  from: "me" | "them";
-  content: string;
-  timestamp: string;
-  read: boolean;
-  imageUrl?: string;
-}
+import type { Message } from "@/types/chat";
 
 interface ChatMainProps {
   messages: Message[];

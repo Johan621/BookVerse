@@ -5,18 +5,9 @@ import * as React from "react";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import type { ExchangeRequest } from "@/types/exchange";
 
 // Mock data for exchange requests
-interface ExchangeRequest {
-  id: string;
-  direction: "Incoming" | "Outgoing";
-  status: "Pending" | "Accepted" | "Rejected" | "Completed";
-  title: string;
-  pickupDate: string; // ISO string
-  pickupLocation: string;
-  timeline: { date: string; description: string }[];
-}
-
 const MOCK_EXCHANGES: ExchangeRequest[] = [
   {
     id: "e1",

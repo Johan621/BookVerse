@@ -3,15 +3,7 @@
 
 import * as React from "react"
 import { MessageItem } from "@/components/chat/MessageItem"
-
-interface Message {
-  id: string
-  from: "me" | "them"
-  content: string
-  timestamp: string
-  read: boolean
-  imageUrl?: string
-}
+import type { Message } from "@/types/chat";
 
 interface MessageListProps {
   messages: Message[]

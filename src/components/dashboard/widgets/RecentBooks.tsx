@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { EmptyState } from "./EmptyStates";
+import { EmptyState } from "@/components/common/EmptyState";
 import { toast } from "sonner";
 
 const MOCK_BOOKS = [
@@ -32,7 +32,7 @@ export const RecentBooks = () => {
           icon={BookOpen}
           title="No books uploaded"
           description="List your first book to start exchanging with the community."
-          actionLabel="Upload Book"
+          action={<Button variant="outline" onClick={() => toast.info("Coming soon!")}>Upload Book</Button>}
         />
       </div>
     );

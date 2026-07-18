@@ -5,14 +5,7 @@ import { Input } from "@/components/ui/Input";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { toast } from "sonner";
 import type { Conversation } from "./ConversationList";
-
-export interface Message {
-  id: string;
-  senderId: "me" | string;
-  text: string;
-  timestamp: string;
-  status: "SENT" | "DELIVERED" | "READ";
-}
+import type { Message } from "@/types/chat";
 
 interface ChatAreaProps {
   conversation: Conversation;

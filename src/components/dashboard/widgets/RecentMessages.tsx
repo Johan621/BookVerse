@@ -1,7 +1,7 @@
 import * as React from "react";
 import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { EmptyState } from "./EmptyStates";
+import { EmptyState } from "@/components/common/EmptyState";
 import { toast } from "sonner";
 
 const MOCK_MESSAGES = [

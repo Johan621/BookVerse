@@ -1,18 +1,8 @@
 import * as React from "react";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/Input";
+import type { Conversation } from "@/types/chat";
 
-export interface Conversation {
-  id: string;
-  user: {
-    name: string;
-    avatar: string;
-    online: boolean;
-  };
-  lastMessage: string;
-  timestamp: string;
-  unreadCount: number;
-}
 
 interface ConversationListProps {
   conversations: Conversation[];
