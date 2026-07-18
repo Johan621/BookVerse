@@ -10,6 +10,9 @@ import { BookCard } from "@/components/dashboard/books/BookCard";
 import { Heart, Bookmark, MessageSquare, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
+// Placeholder image for missing mock images
+const PLACEHOLDER_IMAGE = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+
 // Mock data for demonstration
 export const mockBooks = {
   "1": {
@@ -18,15 +21,15 @@ export const mockBooks = {
     author: "F. Scott Fitzgerald",
     description:
       "A classic novel about the American Dream, love, and tragedy set in the Roaring Twenties.",
-    coverUrl: "/images/gatsby-cover.jpg",
+    coverUrl: PLACEHOLDER_IMAGE,
     images: [
-      "/images/gatsby-1.jpg",
-      "/images/gatsby-2.jpg",
-      "/images/gatsby-3.jpg",
+      PLACEHOLDER_IMAGE,
+      PLACEHOLDER_IMAGE,
+      PLACEHOLDER_IMAGE,
     ],
     owner: {
       name: "Alice Johnson",
-      avatarUrl: "/images/avatar-alice.png",
+      avatarUrl: PLACEHOLDER_IMAGE,
     },
     reviews: [
       { user: "Bob", rating: 5, comment: "A timeless masterpiece!" },

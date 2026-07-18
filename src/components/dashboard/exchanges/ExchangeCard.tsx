@@ -29,7 +29,9 @@ const safelyFormatDate = (dateVal: string | Date | null | undefined): string => 
 };
 
 export const ExchangeCard = ({ id, type, status, requestedBook, offeredBook, otherUser, date }: ExchangeCardProps) => {
-  const StatusIcon = statusConfig[(status?.toLowerCase() as ExchangeStatus) || "pending"].icon;
+  const normalizedStatus = (status?.toUpperCase() as ExchangeStatus) || "PENDING";
+  const config = statusConfig[normalizedStatus] || statusConfig.PENDING;
+  const StatusIcon = config.icon;
 
   return (
     <FadeIn>
@@ -57,9 +59,9 @@ export const ExchangeCard = ({ id, type, status, requestedBook, offeredBook, oth
 
           <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-4 sm:gap-6 mt-2 sm:mt-0">
             <div className="flex flex-col items-start sm:items-end">
-              <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border ${statusConfig[(status?.toLowerCase() as ExchangeStatus) || "pending"].color}`}>
+              <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border ${config.color}`}>
                 <StatusIcon className="w-3.5 h-3.5" />
-                {statusConfig[(status?.toLowerCase() as ExchangeStatus) || "pending"].label}
+                {config.label}
               </span>
               <span className="text-[10px] text-muted-foreground mt-1.5">
                 {type === "SENT" ? "To:" : "From:"} <span className="font-medium text-foreground">{otherUser}</span>
