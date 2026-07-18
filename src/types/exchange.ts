@@ -1,11 +1,19 @@
 export interface ExchangeRequest {
   id: string;
-  bookId: string;
-  bookTitle: string;
-  ownerId: string;
-  requesterId: string;
-  status: "pending" | "accepted" | "declined" | "completed";
-  createdAt: string; // ISO format
+  // Dashboard mock properties
+  direction?: "Incoming" | "Outgoing";
+  title?: string;
+  pickupDate?: string;
+  pickupLocation?: string;
+  timeline?: { date: string; description: string }[];
+  
+  // Existing properties
+  bookId?: string;
+  bookTitle?: string;
+  ownerId?: string;
+  requesterId?: string;
+  status: "pending" | "accepted" | "declined" | "completed" | "Pending" | "Accepted" | "Rejected";
+  createdAt?: string; // ISO format
 }
 
 export interface TimelineEvent {
