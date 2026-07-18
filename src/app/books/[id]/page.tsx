@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import BookDetailsClient, { mockBooks } from "./BookDetailsClient";
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const { id } = params;
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
   const book = mockBooks[id as keyof typeof mockBooks];
 
   if (!book) {
@@ -36,8 +36,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-export default function BookDetailsPage({ params }: { params: { id: string } }) {
-  const book = mockBooks[params.id as keyof typeof mockBooks];
+export default async function BookDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const book = mockBooks[id as keyof typeof mockBooks];
   
   // JSON-LD structured data for the book
   const jsonLd = book ? {
@@ -60,7 +61,7 @@ export default function BookDetailsPage({ params }: { params: { id: string } }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
-      <BookDetailsClient params={params} />
+      <BookDetailsClient id={id} />
     </>
   );
 }

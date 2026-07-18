@@ -32,6 +32,10 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  if (pathname.startsWith('/dashboard') || pathname.startsWith('/admin')) {
+    return null;
+  }
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
     

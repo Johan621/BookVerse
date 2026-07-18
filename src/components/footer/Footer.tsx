@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/ui/Button";
@@ -12,7 +13,12 @@ import {
 } from "lucide-react";
 
 export const Footer = () => {
+  const pathname = usePathname();
   const year = new Date().getFullYear();
+
+  if (pathname.startsWith('/dashboard') || pathname.startsWith('/admin')) {
+    return null;
+  }
 
   return (
     <footer className="relative w-full border-t border-white/10 bg-background overflow-hidden z-20">

@@ -59,9 +59,8 @@ type Review = {
   comment: string;
 };
 
-export default function BookDetailsPage({ params }: { params: { id: string } }) {
+export default function BookDetailsPage({ id }: { id: string }) {
   const router = useRouter();
-  const { id } = params;
   const book = mockBooks[id as keyof typeof mockBooks];
 
   const [isWishlisted, setWishlisted] = React.useState(false);
