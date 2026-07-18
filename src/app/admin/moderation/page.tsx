@@ -16,7 +16,7 @@ export default function ModerationQueuePage() {
   const columns = [
     {
       header: "Item Details",
-      cell: (item: typeof items[0]) => (
+      cell: (item: typeof moderationQueue[0]) => (
         <div>
           <p className="font-medium text-foreground">{item.title}</p>
           <p className="text-xs text-muted-foreground">{item.type} • {item.id}</p>
@@ -29,7 +29,7 @@ export default function ModerationQueuePage() {
     },
     {
       header: "Flag Reason",
-      cell: (item: typeof items[0]) => (
+      cell: (item: typeof moderationQueue[0]) => (
         <div className="flex items-center gap-2 text-yellow-400">
           <AlertTriangle className="w-4 h-4" />
           <span className="text-sm">{item.reason}</span>
@@ -42,7 +42,7 @@ export default function ModerationQueuePage() {
     },
     {
       header: "Actions",
-      cell: (item: typeof items[0]) => (
+      cell: (item: typeof moderationQueue[0]) => (
         <div className="flex items-center gap-3">
           <button onClick={() => toast.info("Coming soon!")} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-500/10 text-green-400 hover:bg-green-500/20 border border-green-500/20 transition-all font-medium text-xs">
             <Check className="w-4 h-4" />
