@@ -29,15 +29,15 @@ export const ChatSidebar: React.FC<ChatSidebarProps> = ({ conversations, selecte
             onClick={() => onSelect(conv.id)}
           >
             <div className="relative w-10 h-10 rounded-full mr-3 overflow-hidden shrink-0">
-              <Image src={conv.avatar} alt={conv.name} fill sizes="40px" className="object-cover" />
+              <Image src={conv.avatar || ""} alt={conv.name || ""} fill sizes="40px" className="object-cover" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-medium truncate">{conv.name}</p>
               <p className="text-xs text-muted-foreground truncate">{conv.lastMessage}</p>
             </div>
-            {conv.unread > 0 && (
+            {(conv.unread || 0) > 0 && (
               <span className="ml-2 text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">
-                {conv.unread}
+                {conv.unread || 0}
               </span>
             )}
           </li>

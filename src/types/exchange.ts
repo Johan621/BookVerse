@@ -18,7 +18,7 @@ export interface ExchangeRequest {
 
 export interface TimelineEvent {
   id: string;
-  type: "request" | "accept" | "meetup_set" | "complete" | "cancel" | "REQUESTED" | "MESSAGE" | "ACCEPTED";
+  type: "request" | "accept" | "meetup_set" | "complete" | "cancel" | "REQUESTED" | "MESSAGE" | "ACCEPTED" | "REJECTED" | "COMPLETED" | "CANCELLED";
   title: string;
   description: string;
   timestamp: string;

@@ -15,7 +15,7 @@ export const ConversationList = ({ conversations, activeId, onSelect, className 
   const [search, setSearch] = React.useState("");
 
   const filtered = conversations.filter(c => 
-    c.user.name.toLowerCase().includes(search.toLowerCase())
+    (c.user?.name || "").toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -54,9 +54,9 @@ export const ConversationList = ({ conversations, activeId, onSelect, className 
             >
               <div className="relative shrink-0">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center text-white font-bold shadow-inner">
-                  {conv.user.avatar}
+                  {conv.user?.avatar}
                 </div>
-                {conv.user.online && (
+                {conv.user?.online && (
                   <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-background rounded-full" />
                 )}
               </div>
@@ -64,19 +64,19 @@ export const ConversationList = ({ conversations, activeId, onSelect, className 
               <div className="flex-1 min-w-0">
                 <div className="flex justify-between items-baseline mb-1">
                   <h4 className={`font-bold truncate ${activeId === conv.id ? "text-primary" : "text-foreground"}`}>
-                    {conv.user.name}
+                    {conv.user?.name}
                   </h4>
-                  <span className={`text-xs shrink-0 ml-2 ${conv.unreadCount > 0 ? "text-primary font-bold" : "text-muted-foreground"}`}>
+                  <span className={`text-xs shrink-0 ml-2 ${(conv.unreadCount || 0) > 0 ? "text-primary font-bold" : "text-muted-foreground"}`}>
                     {conv.timestamp}
                   </span>
                 </div>
                 <div className="flex justify-between items-center gap-2">
-                  <p className={`text-sm truncate ${conv.unreadCount > 0 ? "text-foreground font-medium" : "text-muted-foreground"}`}>
+                  <p className={`text-sm truncate ${(conv.unreadCount || 0) > 0 ? "text-foreground font-medium" : "text-muted-foreground"}`}>
                     {conv.lastMessage}
                   </p>
-                  {conv.unreadCount > 0 && (
+                  {(conv.unreadCount || 0) > 0 && (
                     <span className="shrink-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-[10px] font-bold text-primary-foreground">
-                      {conv.unreadCount}
+                      {conv.unreadCount || 0}
                     </span>
                   )}
                 </div>

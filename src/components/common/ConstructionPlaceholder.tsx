@@ -34,7 +34,7 @@ export const ConstructionPlaceholder = ({
                 {index === breadcrumbs.length - 1 ? (
                   <span className="text-foreground font-medium">{crumb.label}</span>
                 ) : (
-                  <Link href={crumb.href} className="hover:text-primary transition-colors">
+                  <Link href={crumb.href || ""} className="hover:text-primary transition-colors">
                     {crumb.label}
                   </Link>
                 )}

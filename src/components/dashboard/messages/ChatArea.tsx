@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { toast } from "sonner";
-import type { Conversation } from "./ConversationList";
+import type { Conversation } from "@/types/chat";
 import type { Message } from "@/types/chat";
 
 interface ChatAreaProps {
