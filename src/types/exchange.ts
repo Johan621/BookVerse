@@ -25,7 +25,7 @@ export interface TimelineEvent {
   isCompleted?: boolean;
 }
 
-export type ExchangeStatus = "pending" | "accepted" | "declined" | "completed";
+export type ExchangeStatus = "pending" | "accepted" | "declined" | "completed" | "PENDING" | "ACCEPTED" | "DECLINED" | "COMPLETED";
 
 export interface ExchangeCardProps {
   id: string;
